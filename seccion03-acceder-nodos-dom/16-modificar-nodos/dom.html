@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOMSetAttribute</title>
+<script>
+window.onload = function(){
+	// DOM
+	//Genera un arreglo o nodelist
+	var misLI = document.getElementsByTagName("li");
+	console.log("El numero de elementos de lista son: "+misLI.length+"<br>");
+
+	//Creamos todo el elemento de las UL
+	var miDOM = document.getElementById("dom");
+	console.log("El numero de nodos de lista son: "+miDOM.childNodes.length+"<br>");
+	console.log("El contenido del nodo es: "+miDOM.innerHTML+"<br>");
+	console.log("El tipo de nodo es: "+miDOM.nodeType+"<br>");
+
+	//Con el método setAttribute asignamos una clase a un nodo
+	miDOM.setAttribute("class","rojo");
+}
+</script>
+<style>
+.rojo{
+	color: red;
+	font-size: 3em;
+}
+</style>
+</head>
+
+<body>
+<h1>Introducción al DOM</h1>
+<p>¿Qué es el DOM?</p>
+<ul id="dom">
+  <li>Document</li>
+  <li>Object</li>
+  <li>Model</li>
+</ul>
+</body>
+</html>
