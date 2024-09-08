@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM | removeChild</title>
+</head>
+
+<body>
+<h1>Introducción al DOM</h1>
+<p>¿Qué es el DOM?</p>
+<ul id="dom">
+  <li>Document</li>
+  <li>Object</li>
+  <li>Model</li>
+</ul>
+<button id="pulsar">Borrar un item</button>
+<script>
+document.getElementById("pulsar").onclick = function(){
+	//
+	var dom = document.getElementById("dom");
+	console.log(dom.childNodes.length);
+	if(dom.childNodes.length>0){
+		console.log(dom.childNodes[0].nodeType,Node.TEXT_NODE)
+		if(dom.childNodes[0].nodeType==Node.TEXT_NODE){
+			dom.removeChild(dom.childNodes[0]);
+		}
+		if(dom.childNodes[0].nodeType==Node.ELEMENT_NODE){
+			dom.removeChild(dom.childNodes[0]);
+		}
+	}	
+}
+</script>
+</body>
+</html>

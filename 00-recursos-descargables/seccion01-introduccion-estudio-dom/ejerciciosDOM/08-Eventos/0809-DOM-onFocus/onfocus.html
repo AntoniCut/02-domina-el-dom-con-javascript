@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<title>DOM | onFocus</title>
+<script>
+//Manejo de los eventos onfocus y onblur
+//onfocus es cuendo el cursor selecciona una campos de entrada
+//onblur cuando sacamos el cursor a otra area diferente al campo de entrada
+var campo1, campo2;
+//Las funciones
+function enciende(campo){
+	campo.setAttribute("class","enciende");
+}
+function apaga(campo){
+	campo.setAttribute("class","apaga");
+}
+//Generamos los listeners
+window.onload=function(){
+	//Creamos las instancias de los objetos
+	campo1 = document.getElementById("campo1");
+	campo2 = document.getElementById("campo2");
+	//Creamos los listeners
+	campo1.onfocus=function(){
+		enciende(campo1);
+	}
+	campo1.onblur=function(){
+		apaga(campo1);
+	}
+	
+	campo2.onfocus=function(){
+		enciende(campo2);
+	}
+	campo2.onblur=function(){
+		apaga(campo2);
+	}
+}	
+</script>
+<style>
+.enciende{ background-color:#FF9;}
+.apaga{background-color:#FFF;}
+.error{background-color:#F00;}
+</style>
+</head>
+<body>
+<form>
+  <p>
+    <label for="campo1">Campo1</label>
+    <input type="text" name="campo1" id="campo1" />
+  </p>
+  <p>
+    <label for="campo2">Campo2</label>
+    <input type="text" name="campo2" id="campo2" />
+  </p>
+</form>
+</body>
+</html>

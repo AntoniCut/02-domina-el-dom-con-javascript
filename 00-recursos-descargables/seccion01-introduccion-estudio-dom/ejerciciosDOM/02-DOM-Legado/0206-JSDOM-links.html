@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>document.links</title>
+  <meta charset="utf-8"/>
+</head>
+<body>
+
+<p>
+  <a href="uno.html">uno</a><br>
+  <a href="dos.php">dos</a><br>
+  <a href="tres.pdf">tres</a><br>
+</p>
+
+<p>Pulsa el botón para obtener los links</p>
+
+<button id="pulsar">Pulsar</button>
+
+<script>
+document.getElementById("pulsar").onclick = function() {
+    var x = document.links, cadena = "";
+    for(i=0; i<x.length; i++){
+      cadena += document.links[i].href+"\n";
+    }
+    alert(cadena);
+}
+</script>
+
+</body>
+</html>

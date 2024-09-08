@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>hasAttribute y removeAttribute</title>
+<style>
+h1{ color:blue; }
+.rojo{ color:red; }
+.verde{ color:green;}
+.amarillo{ color:yellow; }
+</style>
+</head>
+
+<body>
+<h1>Introducción al DOM</h1>
+<p class="verde">¿Qué es el DOM?</p>
+<p >Esta es una cadena</p>
+<ul id="dom" class="amarillo">
+  <li>Document</li>
+  <li>Object</li>
+  <li>Model</li>
+</ul>
+<button id="cambiar">Cambiar color</button>
+<button id="quitar">Quitar color</button>
+<script>
+document.getElementById("cambiar").onclick = function(){
+	var ul = document.getElementById("dom");
+	var color = ul.getAttribute("class");
+	if(color=="amarillo")  ul.setAttribute("class","verde");
+	if(color=="verde")  ul.setAttribute("class","rojo");
+	if(color=="rojo")  ul.setAttribute("class","amarillo");
+}
+document.getElementById("quitar").onclick = function(){
+	var ul = document.getElementById("dom");
+	//Identifica si el nodo tiene el atributo "class"
+	//si lo tiene es true y si no lo tiene es false
+	if(ul.hasAttribute("class")){
+		//Si lo identifica, elimina el atributo "class"
+		//Y en este caso, queda como amarillo porque lo hereda de UL
+		ul.removeAttribute("class");
+	}
+}
+</script>
+</body>
+</html>

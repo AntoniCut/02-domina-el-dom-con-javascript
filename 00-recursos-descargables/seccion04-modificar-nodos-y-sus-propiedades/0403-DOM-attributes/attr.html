@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Attributes</title>
+</head>
+
+<body>
+<h1>Introducción al DOM</h1>
+<p>¿Qué es el DOM?</p>
+<ul id="dom">
+  <li title="mi documento" id="documento">Document</li>
+  <li>Object</li>
+  <li>Model</li>
+</ul>
+<script>
+// DOM
+//Genera un nodelist
+var x = document.getElementById("dom").childNodes;
+console.log("El número de elementos de lista son: "+x.length);
+//
+for(var i=0; i<x.length; i++){
+	if(x[i].nodeType==1){
+		console.log("---------------");
+		console.log("El tipo de nodo es  : "+x[i].nodeType);
+		console.log("El nombre de nodo es  : "+x[i].nodeName);
+		console.log("Los att. de nodo es : "+x[i].attributes);
+		console.log("Num. att.           : "+x[i].attributes.length);
+		for(var j=0; j<x[i].attributes.length; j++){
+        	console.log("Atributo:",x[i].attributes[j].name,"valor:",x[i].attributes[j].value, x[i].attributes[j].isId, x[i].attributes[j].specified );
+		}
+	}
+}
+</script>
+</body>
+</html>

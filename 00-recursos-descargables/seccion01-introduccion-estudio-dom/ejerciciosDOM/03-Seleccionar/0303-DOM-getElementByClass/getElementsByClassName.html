@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Introducción al DOM | getElementsByClassName</title>
+<style>
+.rojo{ color:red; }
+</style>
+</head>
+
+<body>
+<h1>Introducción al DOM</h1>
+<p>¿Qué es el DOM?</p>
+<ul>
+  <li class="rojo noexiste">Document</li>
+  <li>Object</li>
+  <li class="rojo">Model</li>
+</ul>
+<script >
+	//Recuperamos en un arreglo los elementos o nodos que tienen la clase css "rojo"
+	var rojos = document.getElementsByClassName("rojo");
+	console.log("Elementos que tienen la clase 'rojo' son: "+rojos.length);
+	//Desplegamos en pantalla los contenidos de los elementos 
+	//con la clase "rojo"
+	//innerHTML regresa el contenido de la etiqueta 
+	//(Que es un nodo de texto)
+	for(var i=0; i<rojos.length; i++){
+		console.log("El contenido es :"+rojos[i].innerHTML);	
+	}
+</script>
+</body>
+</html>

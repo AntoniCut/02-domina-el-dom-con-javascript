@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>DOM 0 | anchors</title>
+</head>
+<body>
+<a name="uno">Uno</a><br>
+<a name="dos">Dos</a><br>
+<a name="tres">Tres</a><br>
+<a name="cuatro">Cuatro</a><br>
+<a name="cinco">Cinco</a><br>
+<a name="seis">Seis</a><br>
+
+<p>Pulsa el botón para saber cuantos hipervínculos tiene la página</p>
+
+<button id="anclas">Pulsar</button>
+
+<script>
+document.getElementById("anclas").onclick = function() {
+    var x = document.anchors.length;
+    alert("Este documento tiene "+x+" hipervínculos.");
+}
+</script>
+
+</body>
+</html>

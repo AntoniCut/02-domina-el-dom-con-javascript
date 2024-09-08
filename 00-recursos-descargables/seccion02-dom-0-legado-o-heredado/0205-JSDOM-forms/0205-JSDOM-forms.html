@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>document.form</title>
+  <meta charset="utf-8"/>
+</head>
+<body>
+
+<form>
+  Nombre: <input type="text" name="nombre" value="Pancho"><br>
+  Apellido: <input type="text" name="apellido" value="Pantera"><br>
+  País: <input type="text" name="pais" value="México"><br>
+</form>
+
+<p>Pulse el botón para ver los elementos de la forma</p>
+
+<button id="enviar">Enviar</button>
+
+<script>
+document.getElementById("enviar").onclick = function() {
+    var x = document.forms[0];
+    var cadena = "Los valores de esta forma son:";
+    for (var i = 0; i < x.length; i++) {
+        cadena += x.elements[i].value + "\n";
+    }
+    alert(cadena);
+}
+</script>
+
+</body>
+</html>

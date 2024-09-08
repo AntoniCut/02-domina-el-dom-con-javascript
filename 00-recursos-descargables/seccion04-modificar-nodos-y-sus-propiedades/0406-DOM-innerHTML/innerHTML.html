@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>innerHTML</title>
+</head>
+
+<body>
+<h1>Introducción al DOM</h1>
+<p>¿Qué es el DOM?</p>
+<p>Esta es una cadena</p>
+<ul>
+  <li id="documento">Document</li>
+  <li id="objeto">Object</li>
+  <li id="modelo">Model</li>
+</ul>
+<button id="espanol">Español</button>
+<button id="frances">Francés</button>
+<button id="ingles">Inglés</button>
+<script>
+document.getElementById("espanol").onclick = function(){
+  document.getElementById("documento").innerHTML = "Documento";
+  document.getElementById("objeto").innerHTML = "Objeto";
+  document.getElementById("modelo").innerHTML = "Modelo";
+}
+document.getElementById("ingles").onclick = function(){
+  document.getElementById("documento").innerHTML = "Document";
+  document.getElementById("objeto").innerHTML = "Object";
+  document.getElementById("modelo").innerHTML = "Model";
+}
+document.getElementById("frances").onclick = function(){
+  document.getElementById("documento").innerHTML = "Document";
+  document.getElementById("objeto").innerHTML = "Objet";
+  document.getElementById("modelo").innerHTML = "Modèle";
+}
+</script>
+</body>
+</html>

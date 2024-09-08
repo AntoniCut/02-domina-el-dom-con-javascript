@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DOM | createTextNode</title>
+<meta charset="utf-8"/>
+</head>
+<body>
+
+<p>Pulsa el botón para recibir un saludo...</p>
+
+<button id="pulsar">Pulsar</button>
+
+<script>
+//Crea un nodo de texto con contenido.
+//Hay que añadirlo a un nodo con appendChild() o insertBefore().
+document.getElementById("pulsar").onclick = function() {
+    var h = document.createElement("h1");
+    var t = document.createTextNode("Hola, cara de bola");
+    //
+    h.appendChild(t);
+    //
+    document.body.appendChild(h);
+}
+</script>
+
+</body>
+</html

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DOM | replaceChild</title>
+<meta charset="utf-8"/>
+</head>
+<body>
+<h1>Introducción al DOM</h1>
+<p>¿Qué es el DOM?</p>
+<ul id="dom"><li id="documento">Document</li><li id="objeto">Object</li><li id="modelo">Model</li></ul>
+<button id="pulsar">Pulsar para cambiar</button>
+<script>
+document.getElementById("pulsar").onclick = function() {
+	// DOM
+	//Creamos un arreglo
+	var textos = new Array();
+	textos.push("Adrodita nació de la espuma del mar...");
+	textos.push("Una pelota de golf puede ser más letal que una bala...");
+	textos.push("Las abejas tienen emociones...");
+	textos.push("El arte es bueno para la salud...");
+	textos.push("Las rayas de la cebra auyentan a las mosca...");
+	textos.push("Las papas disminuyen la presión arterial...");
+	//Creamos un número aleatorio
+	var num = Math.floor(Math.random()*textos.length);
+	//
+    var li = document.createElement("li");
+    var texto = document.createTextNode(textos[num]);
+    li.appendChild(texto);
+    //Por medio de este método, podemos reemplazar un nodo por otro:
+	//nodoPadre.replaceChild(nodoNuevo, nodoViejo);
+	//Puede ser un nodo que ya exista o uno nuevo.
+    var dom = document.getElementById("dom");
+    dom.replaceChild(li, dom.childNodes[0]);
+}
+</script>
+
+</body>
+</html
