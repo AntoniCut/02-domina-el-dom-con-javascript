@@ -1,0 +1,130 @@
+<!--  ***********************************************************************************************************************  -->
+<!--  **********  /02-domina-el-dom-con-javascript/seccion02-dom-legado-o-heredado/02-etiqueta-anchors/index.html  **********  -->
+<!--  ***********************************************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> Etiqueta Anchor - Sección 02 - DOM 0 Legado o Heredado - Domina el DOM con JavaScript - Udemy - Francisco
+        Javier Arce Anguiano </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="img/favicon-JS-2.ico">
+
+    <!--  **********  Estilos  **********  -->
+    <style>
+        .header {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid green;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 20px;
+            gap: 10px;
+            font-size: 24px;
+        }
+
+        .botones-container {
+            display: flex;
+            gap: 100px; 
+        }
+
+        .botones {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        button {
+            width: 100px;
+            color: white;
+            background-color: blueviolet;
+            padding: 10px;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Seccion 02 - Etiqueta Anchors. </h1>
+        <hr>
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+        <a name="uno">Uno</a><br>
+        <a name="dos">Dos</a><br>
+        <a name="tres">Tres</a><br>
+        <a name="cuatro">Cuatro</a><br>
+        <a name="cinco">Cinco</a><br>
+        <a name="seis">Seis</a><br>
+
+        <p>Pulsa el botón para saber cuantos hipervínculos tiene la página</p>
+
+        <div class="botones-container">
+
+            <div class="botones">
+                <h3> Forma Antigua </h3>
+                <button id="anclas"> Pulsar </button>
+            </div>
+
+            <div class="botones">
+                <h4> Forma Moderna </h4>
+                <button id="anclas2"> Pulsar </button>
+            </div>
+
+
+        </div>
+
+
+
+
+        <p id="demo"></p>
+
+    </main>
+
+    <!--  **********  Código JS  **********  -->
+    <script>
+
+        //  -----  Forma Antigua  -----
+        document.getElementById("anclas").onclick = function () {
+            var x = document.anchors.length;
+            alert("Este documento tiene " + x + " hipervínculos.");
+        }
+
+        //  -----  Forma Moderna  -----
+        const boton = document.getElementById('anclas2');
+        boton.addEventListener('click', () => {
+
+            const anchors = document.querySelectorAll('a');
+            alert("Este documento tiene " + anchors.length + " hipervínculos.");
+
+        });
+
+    </script>
+
+</body>
+
+</html>

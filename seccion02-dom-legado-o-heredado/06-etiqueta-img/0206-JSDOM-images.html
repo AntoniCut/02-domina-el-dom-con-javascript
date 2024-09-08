@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>document.images</title>
+  <meta charset="utf-8"/>
+</head>
+<body>
+<img src="fondos/fondo1.jpg" alt="fondo01" width="150" height="120">
+<img src="fondos/fondo2.jpg" alt="fondo02" width="150" height="120">
+<img src="fondos/fondo3.jpg" alt="fondo03" width="150" height="120">
+
+<p>Pulsa el botón para ver las URL de las imágenes</p>
+
+<button id="pulsar">Pulsar</button>
+
+<script>
+document.getElementById("pulsar").onclick = function() {
+    var x = document.images, cadena = "";
+    for(var i=0; i<x.length; i++){
+      cadena += x[i].src+"\n";
+    }
+    alert(cadena);
+}
+</script>
+
+</body>
+</html>

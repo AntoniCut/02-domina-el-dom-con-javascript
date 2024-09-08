@@ -1,0 +1,135 @@
+<!--  *************************************************************************************************************************************  -->
+<!--  **********  /02-domina-el-dom-con-javascript/seccion02-dom-legado-o-heredado/10-guardar-modificar-leer-cookies/index.html  **********  -->
+<!--  *************************************************************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> Guardar, Modificar y Leer Cookies - Sección 02 - DOM 0 Legado o Heredado - Domina el DOM con JavaScript -
+        Udemy - Francisco
+        Javier Arce Anguiano </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="img/favicon-JS-2.ico">
+
+    <!--  **********  Estilos  **********  -->
+    <style>
+        .header {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid green;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 20px;
+            gap: 10px;
+            font-size: 16px;
+        }
+
+        .botones-container {
+            display: flex;
+            gap: 100px;
+        }
+
+        .botones {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        button {
+            width: 100px;
+            color: white;
+            background-color: blueviolet;
+            padding: 10px;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+    </style>
+
+    <!--  **********  Código JS  **********  -->
+    <script>
+
+        function guardaCookie(nombre, valor, tiempo) {
+            
+            var d = new Date();
+            d.setTime(d.getTime() + (tiempo * 24 * 60 * 60 * 1000));
+            
+            var expira = "expires=" + d.toGMTString();
+            
+            document.cookie = nombre + "=" + valor + ";" + expira + ";path=/";
+            alert(nombre + "=" + valor + ";" + expira + ";path=/");
+        }
+
+        function recuperaCookie(nombre) {
+            
+            var cadena = nombre + "=";
+            var ca = document.cookie.split(';');
+            
+            alert(document.cookie);
+            
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) == ' ') {
+                    c = c.substring(1);
+                }
+                if (c.indexOf(cadena) == 0) {
+                    return c.substring(cadena.length, c.length);
+                }
+            }
+            return "";
+        }
+
+        function leeCookie() {
+            
+            var usuario = recuperaCookie("nombre");
+            
+            if (usuario != "") {
+                alert("Hola nuevamente " + usuario);
+            } else {
+                usuario = prompt("¿Cómo te llamas?:", "");
+                if (usuario != "" && usuario != null) {
+                    guardaCookie("nombre", usuario, 30);
+                }
+            }
+        }
+
+    </script>
+
+</head>
+
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Seccion 02 - Guardar, Modificar y Leer Cookies. </h1>
+        <hr>
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+    </main>
+
+    <script>
+        leeCookie();
+    </script>
+
+</body>
+
+</html>
