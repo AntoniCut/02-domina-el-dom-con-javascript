@@ -1,0 +1,114 @@
+<!--  **************************************************************************************************************************  -->
+<!--  **********  /02-domina-el-dom-con-javascript/seccion03-acceder-nodos-dom/13-get-element-by-tag-name/index.html  **********  -->
+<!--  **************************************************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> Sección 03 - Acceder a los Nodos DOM - Domina el DOM con JavaScript -
+        Udemy - Francisco
+        Javier Arce Anguiano </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="img/favicon-JS-2.ico">
+
+    <!--  **********  Estilos  **********  -->
+    <style>
+        .header {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid green;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 20px;
+            gap: 10px;
+            font-size: 16px;
+        }
+
+        .botones-container {
+            display: flex;
+            gap: 100px;
+        }
+
+        .botones {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        button {
+            width: 100px;
+            color: white;
+            background-color: blueviolet;
+            padding: 10px;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        span {
+            background-color: aquamarine;
+            color: black;
+            font-size: 18px;
+            text-align: center;
+        }
+        
+        .rojo {
+            color: red;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Sección 03 - GetElementByTagName. </h1>
+        <hr>
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+        <h1>Introducción al DOM</h1>
+        <p>¿Qué es el DOM?</p>
+        
+        <ul>
+            <li class="rojo">Document</li>
+            <li>Object</li>
+            <li class="rojo">Model</li>
+        </ul>
+
+    </main>
+
+    <script>
+
+        const li = document.getElementsByTagName('li');
+        console.warn("li: ", li);
+        console.warn("Nº elementos de la Lista: ", li.length);
+        
+        const resultado = `<span> Nº elementos de la Lista: ${li.length} </span>`; 
+        document.write(resultado);
+
+    </script>
+
+</body>
+
+</html>

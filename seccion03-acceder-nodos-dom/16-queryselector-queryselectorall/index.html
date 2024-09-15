@@ -1,0 +1,148 @@
+<!--  *********************************************************************************************************************************  -->
+<!--  **********  /02-domina-el-dom-con-javascript/seccion03-acceder-nodos-dom/16-queryselector-queryselectorall/index.html  **********  -->
+<!--  *********************************************************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> Sección 03 - Acceder a los Nodos DOM - Domina el DOM con JavaScript -
+        Udemy - Francisco
+        Javier Arce Anguiano </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="img/favicon-JS-2.ico">
+
+    <!--  **********  Estilos  **********  -->
+    <style>
+        .header {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid green;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 20px;
+            gap: 10px;
+            font-size: 16px;
+        }
+
+        .botones-container {
+            display: flex;
+            gap: 100px;
+        }
+
+        .botones {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        button {
+            width: 100px;
+            color: white;
+            background-color: blueviolet;
+            padding: 10px;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        span {
+            background-color: aquamarine;
+            color: black;
+            font-size: 18px;
+            text-align: center;
+        }
+
+
+        h1 {
+            color: blue;
+        }
+
+        .rojo {
+            color: red;
+        }
+
+        .verde {
+            color: green;
+        }
+
+        #amarillo {
+            color: yellow;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Sección 03 - QuerySelector y QuerySelectorAll. </h1>
+        <hr>
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+        <h1>Introducción al DOM</h1>
+
+        <p class="verde">¿Qué es el DOM?</p>
+
+        <p>Esta es una cadena</p>
+
+        <ul id="amarillo">
+            <li class="rojo">Document</li>
+            <li>Object</li>
+            <li class="rojo noexiste">Model</li>
+        </ul>
+       
+    </main>
+
+    <!--  **********  Código JS  **********  -->
+    <script>
+
+        //  -----  por clase (ojo con el punto)  -----
+        const rojos = document.querySelectorAll(".rojo");
+        console.error("Tenemos " + rojos.length + " elementos rojos");
+        document.write("<br> <span> Tenemos " + rojos.length + " elementos rojos </span>");
+
+        //  -----  Selecciono por identificador (#)  -----
+        const amarillos = document.querySelectorAll("#amarillo");
+        console.error("Tenemos " + amarillos.length + " elementos amarillos");
+        document.write("<br> <span> Tenemos " + amarillos.length + " elementos amarillos </span>");
+
+        //  -----  Seleccionamos por atributo  -----
+        const verdes = document.querySelectorAll("p.verde");
+        console.log("Tenemos " + verdes.length + " elementos verdes");
+        document.write("<br> <span> Tenemos " + verdes.length + " elementos verdes </span>");
+
+        //  -----  Seleccionamos por etiqueta  -----
+        const parrafos = document.querySelectorAll("p");
+        console.log("Tenemos " + parrafos.length + " párrafos");
+        document.write("<br> <span> Tenemos " + parrafos.length + " parrafos </span>");
+
+        //  -----  Seleccionamos por varias clases  -----
+        const noexiste = document.querySelectorAll(".noexiste");
+        console.log("Tenemos " + noexiste.length + " elementos con las clases rojo o noexiste");
+        document.write("<br> <span> Tenemos " + noexiste.length + " elementos con la clase noexiste </span>");
+
+    </script>
+
+</body>
+
+</html>
