@@ -110,36 +110,42 @@
             <li>Object</li>
             <li class="rojo noexiste">Model</li>
         </ul>
+
+        <p id="demo"> </p>
        
     </main>
 
     <!--  **********  Código JS  **********  -->
     <script>
 
+        //  ----------  querySelector y querySelectorAll  ----------
+
+        const demo = document.querySelector('#demo');
+
         //  -----  por clase (ojo con el punto)  -----
         const rojos = document.querySelectorAll(".rojo");
         console.error("Tenemos " + rojos.length + " elementos rojos");
-        document.write("<br> <span> Tenemos " + rojos.length + " elementos rojos </span>");
+        demo.innerHTML += `<br> <span> Tenemos ${rojos.length} elementos rojos </span>`;
 
         //  -----  Selecciono por identificador (#)  -----
         const amarillos = document.querySelectorAll("#amarillo");
         console.error("Tenemos " + amarillos.length + " elementos amarillos");
-        document.write("<br> <span> Tenemos " + amarillos.length + " elementos amarillos </span>");
+        demo.innerHTML += `<br> <span> Tenemos ${amarillos.length} elementos amarillos </span>`;
 
         //  -----  Seleccionamos por atributo  -----
         const verdes = document.querySelectorAll("p.verde");
         console.log("Tenemos " + verdes.length + " elementos verdes");
-        document.write("<br> <span> Tenemos " + verdes.length + " elementos verdes </span>");
+        demo.innerHTML += `<br> <span> Tenemos ${verdes.length} elementos verdes </span>`;
 
         //  -----  Seleccionamos por etiqueta  -----
         const parrafos = document.querySelectorAll("p");
         console.log("Tenemos " + parrafos.length + " párrafos");
-        document.write("<br> <span> Tenemos " + parrafos.length + " parrafos </span>");
+        demo.innerHTML += `<br> <span> Tenemos ${parrafos.length} parrafos </span>`;
 
         //  -----  Seleccionamos por varias clases  -----
         const noexiste = document.querySelectorAll(".noexiste");
         console.log("Tenemos " + noexiste.length + " elementos con las clases rojo o noexiste");
-        document.write("<br> <span> Tenemos " + noexiste.length + " elementos con la clase noexiste </span>");
+        demo.innerHTML += `<br> <span> Tenemos ${noexiste.length} elementos con la clase noexiste </span>`;
 
     </script>
 

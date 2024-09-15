@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>document.title | Este es el título</title>
+  <meta charset="utf-8"/>
+</head>
+<body>
+
+<p>Pulsa el botón para ver obtener el TITULO de la página.</p>
+
+<button id="pulsar">Pulsar</button>
+
+<script>
+document.getElementById("pulsar").onclick = function() {
+    var x = document.title;
+    alert(x);
+}
+</script>
+
+</body>
+</html>

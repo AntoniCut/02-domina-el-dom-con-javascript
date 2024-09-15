@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DOM | Select y Option</title>
+<meta charset="utf-8">
+<style> 
+div{
+  width:600px;
+  height:400px;
+  background-color:gray;
+  background-size: 100% 100%;
+}
+</style>
+<script>
+window.onload = function () {
+  //Elementos input
+  document.getElementById('foto').onchange =  function(e){
+    n = e.target.value;
+    var archivo = "url('../../fondos/fondo"+n+".jpg')";
+    console.log(archivo);
+    document.getElementById("salida").style.backgroundImage = archivo;
+  }
+}
+</script>
+</head>
+<body>
+<select id="foto">
+<option value="0">-Selecciona una imágen-</option>
+<option value="1">El partenón</option>
+<option value="2">La nebulosa de Andrómeda</option>
+<option value="3">Una villa ateniense</option>
+<option value="4">El partenón de noche</option>
+<option value="5">Atardecer ateniense</option>
+<option value="6">El partenón</option>
+</select>
+<div id="salida"></div>
+</body>
+</html>

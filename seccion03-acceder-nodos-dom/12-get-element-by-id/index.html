@@ -91,12 +91,39 @@
             <li>Model</li>
         </ul>
 
+        <p id="demo"> </p>
+
     </main>
 
     <!--  **********  Código JS  **********  -->
     <script>
+        
+        //  ----------  getElementById  ----------
 
-        //  -----  getElementById  -----
+        const demo = document.getElementById('demo');
+        console.warn("demo: ", demo);
+
+        const myIdLista = document.getElementById('lista');
+        console.warn("myIdLista: ", myIdLista);
+
+        // Utilizando `children` para solo iterar sobre los elementos hijos (excluyendo nodos de texto)
+        for (let i = 0; i < myIdLista.children.length; i++) {
+            console.log(myIdLista.children[i].innerText); // Muestra el texto de cada <li>
+            demo.innerHTML += `<span> Elemento ${i + 1}: ${myIdLista.children[i].innerText} </span><br>`;
+        }
+
+        // Mostrando el número total de elementos hijos
+        demo.innerHTML += `<br> <span> Nº de elementos de la lista: ${myIdLista.children.length} </span>`;
+    </script>
+
+
+
+    <!-- <script>
+
+        //  ----------  getElementById  ----------
+
+        const demo = document.getElementById('demo');
+
         const myIdLista = document.getElementById('lista');
         console.warn("myIdLista: ", myIdLista);
 
@@ -104,11 +131,16 @@
         console.warn("myListaSelector: ", myListaSelector);
 
         //  arroja 7 elementos: 3 li, 3 textos y un id.
-        const resultado = `<span> Nº elementos de la Lista: ${myIdLista.childNodes.length} </span>`;
-        document.write(resultado);
-        console.warn("Numero de elementos de la lista ", myIdLista.childNodes);
+        console.warn("Elementos de la lista ", myIdLista.childNodes);
+        for(let i=0; i<myIdLista.length; i++) {
+            console.log(myIdLista.children[i]);
+            demo.innerHTML += `<span> Nº elementos de la Lista: ${myIdLista.childNodes[i].value} </span> `;    
+        }
 
-    </script>
+
+        demo.innerHTML += `<span> Nº elementos de la Lista: ${myIdLista.childNodes.length} </span> `;
+
+    </script> -->
 
 </body>
 

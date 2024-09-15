@@ -114,16 +114,27 @@
         
         <p> Seleccionar Todos: <button id="pulsar"> Pulsar </button> </p>
 
+        <p id="demo"> </p>
+
     </main>
 
     <!--  **********  Código JS  ***********  -->
     <script>
 
+        //  ----------  getElementByName  ----------
+
+        const demo = document.getElementById('demo');
         const pulsar = document.getElementById('pulsar');
         const idioma = document.getElementsByName('idioma');
-                
+
+        console.warn("idioma: ", idioma);
+        for(let i=0; i<idioma.length; i++) {
+            console.warn(`${i}: ${idioma[i].value}`);
+            demo.innerHTML += `<br><span> ${i}: ${idioma[i].value} </span>  `;
+        }
+                              
         pulsar.addEventListener('click', () => {
-            
+           
             for(let i=0; i<idioma.length; i++) idioma[i].checked = true;
             
         });

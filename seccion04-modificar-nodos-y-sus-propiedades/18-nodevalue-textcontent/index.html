@@ -1,0 +1,157 @@
+<!--  ****************************************************************************************************************************************  -->
+<!--  **********  /02-domina-el-dom-con-javascript/seccion04-modificar-nodos-y-sus-propiedades/18-nodevalue-textcontent/index.html  **********  -->
+<!--  ****************************************************************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> Sección 04 - Modifica Nodos y sus Propiedades - Domina el DOM con JavaScript -
+        Udemy - Francisco
+        Javier Arce Anguiano </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="img/favicon-JS-2.ico">
+
+    <!--  **********  Estilos  **********  -->
+    <style>
+        .header {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid green;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 20px;
+            gap: 10px;
+            font-size: 16px;
+        }
+
+        .botones-container {
+            display: flex;
+            gap: 100px;
+        }
+
+        .botones {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        button {
+            width: 100px;
+            color: white;
+            background-color: blueviolet;
+            padding: 10px;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        span {
+            background-color: aquamarine;
+            color: black;
+            font-size: 18px;
+            text-align: center;
+        }
+
+
+        h1 {
+            color: blue;
+        }
+
+        .rojo {
+            color: red;
+        }
+
+        .verde {
+            color: green;
+        }
+
+        #amarillo {
+            color: yellow;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Sección 04 - nodeValue y textContent. </h1>
+        <hr>
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+        <h1>Introducción al DOM</h1>
+        <p>¿Qué es el DOM?</p>
+        
+        <ul id="dom">
+            <li>Document</li>
+            <li>Object</li>
+            <li>Model</li>
+        </ul>
+
+        <p id="demo"> </p>
+
+    </main>
+
+    <!--  **********  Código JS  **********  -->
+    <script>
+
+        //  ----------  nodeValue y textContent  ----------
+
+        const demo = document.getElementById('demo');
+
+        //  -----  Genera un nodelist  -----
+        const ul = document.getElementById("dom").childNodes;
+        
+        console.warn("ul: ", ul);
+
+        console.log("El número de elementos de lista son: "+ ul.length);
+        demo.innerHTML += `<br><span> El número de elementos de la lista son: ${ul.length} </span> `;
+
+        for(var i=0; i< ul.length; i++) {
+	        
+            console.warn("--------------- Iteración: " + (i + 1) + "-----------------");
+	        demo.innerHTML += `<br><br><br> <span> ------------  Iteración: ${ (i + 1)} ------------ </span> `;
+            
+            console.log("El tipo de nodo es  : " + ul[i].nodeType);
+	        demo.innerHTML += `<br><span> El tipo de nodo es: ${ul[i].nodeType} </span> `;
+            
+            console.log("El nombre de nodo es  : "+ ul[i].nodeName);
+            demo.innerHTML += `<br><span> El nombre del nodo es: ${ul[i].nodeName} </span> `;
+            	        
+            //  -----  Es una etiqueta  -----
+	        if(ul[i].nodeType === 1 ){
+		        
+                console.log("textContent : "+ ul[i].textContent);
+		        demo.innerHTML += `<br><span> textContent: ${ul[i].textContent} </span> `;
+                
+                console.log("nodeValue : "+ ul[i].firstChild.nodeValue);
+                demo.innerHTML += `<br><span> nodeValue: ${ul[i].firstChild.nodeValue} </span> `;
+		        console.log("innerHTML   : "+ ul[i].innerHTML);
+	        }
+        }
+
+    </script>
+
+</body>
+
+</html>

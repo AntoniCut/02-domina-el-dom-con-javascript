@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>nodeType y nodeName</title>
+</head>
+
+<body>
+<h1>Introducción al DOM</h1>
+<p>¿Qué es el DOM?</p>
+<ul id="dom">
+<li>Document</li>
+<li>Object</li>
+<li>Model</li>
+</ul>
+<script>
+// DOM
+//Genera un nodelist
+var x = document.getElementById("dom").childNodes;
+console.log("El número de elementos de lista son: "+x.length);
+//
+for(var i=0; i<x.length; i++){
+	console.log("---------------");
+	console.log("El tipo de nodo es  : "+x[i].nodeType);
+	console.log("El nombre de nodo es  : "+x[i].nodeName);
+}
+</script>
+</body>
+</html>

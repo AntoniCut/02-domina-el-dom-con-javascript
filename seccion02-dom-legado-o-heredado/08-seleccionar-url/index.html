@@ -8,7 +8,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title> Seleccionar URL - Sección 02 - DOM 0 Legado o Heredado - Domina el DOM con JavaScript - Udemy - Francisco
+    <title> Sección 02 - DOM 0 Legado o Heredado - Domina el DOM con JavaScript - Udemy - Francisco
         Javier Arce Anguiano </title>
 
     <!--  **********  Favicon  **********  -->
@@ -36,6 +36,10 @@
             margin-top: 20px;
             gap: 10px;
             font-size: 16px;
+        }
+
+        span {
+            background-color: aquamarine;
         }
 
         .botones-container {
@@ -77,14 +81,21 @@
         <p>Pulsa el botón para ver la URL de la página.</p>
         <button id="pulsar">Pulsar</button>
 
+        <p id="demo"> </p>
+
     </main>
 
     <!--  **********  Código JS  **********  -->
     <script>
 
+        //  ----------  document.URL  ----------
+        
+        const demo = document.getElementById('demo');
+
         document.getElementById("pulsar").onclick = function () {
-            var x = document.URL;
+            const x = document.URL;
             alert(x);
+            demo.innerHTML += `<span> ${x} </span> `; 
         }
 
     </script>

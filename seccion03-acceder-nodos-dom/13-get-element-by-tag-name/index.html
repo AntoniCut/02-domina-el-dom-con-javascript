@@ -90,22 +90,36 @@
         <h1>Introducción al DOM</h1>
         <p>¿Qué es el DOM?</p>
         
-        <ul>
+        <ul id="ul">
             <li class="rojo">Document</li>
             <li>Object</li>
             <li class="rojo">Model</li>
         </ul>
 
+        <p id="demo"> </p>
+
     </main>
 
     <script>
+
+        //  ----------  getElemtByTagName  ----------
+
+        const demo = document.getElementById('demo');
+        console.warn("demo: ", demo);
 
         const li = document.getElementsByTagName('li');
         console.warn("li: ", li);
         console.warn("Nº elementos de la Lista: ", li.length);
         
-        const resultado = `<span> Nº elementos de la Lista: ${li.length} </span>`; 
-        document.write(resultado);
+        demo.innerHTML += `<span> Nº elementos de la Lista: ${li.length} </span>`;
+
+
+        const ul = document.getElementById('ul');
+        console.log(ul.children.length);
+        for(let i=0; i<ul.children.length; i++) {
+            demo.innerHTML += `<br><span> elemento de la etiqueta ul: ${ul.children[i].innerText} </span>`;
+        }
+       
 
     </script>
 

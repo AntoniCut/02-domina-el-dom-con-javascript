@@ -8,7 +8,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title> Etiqueta HTML - Sección 02 - DOM 0 Legado o Heredado - Domina el DOM con JavaScript - Udemy - Francisco
+    <title> Sección 02 - DOM 0 Legado o Heredado - Domina el DOM con JavaScript - Udemy - Francisco
         Javier Arce Anguiano </title>
 
     <!--  **********  Favicon  **********  -->
@@ -36,6 +36,10 @@
             margin-top: 20px;
             gap: 10px;
             font-size: 16px;
+        }
+
+        span {
+            background-color: aquamarine;
         }
 
         .botones-container {
@@ -79,23 +83,29 @@
         <a name="tres">Tres</a><br>
         <a name="cuatro">Cuatro</a><br>
         <a name="cinco">Cinco</a><br>
-        <p>Pulsa el botón para saber cuantos elementos tiene la página</p>
+        <p> Pulsa el botón para saber cuantos elementos tiene la página </p>
         <button id="pulsar">Pulsar</button>
+
+        <p id="demo"> </p>
 
     </main>
 
     <!--  **********  Código JS  **********  -->
     <script>
 
+        //  ----------  dcument.documentElement  ----------
         window.onload = function () {
             
+            const demo = document.getElementById('demo');
+
             document.getElementById("pulsar").onclick = function () {
                 
                 //  -----  Nº de Elementos del DOM  -----
-                var x = document.documentElement.childNodes;
+                const elemDom = document.documentElement.childNodes;
 
-                for (var i = 0; i < x.length; i++) {
-                    console.log("Este documento tiene ", x[i], " elementos.");
+                for (var i = 0; i < elemDom.length; i++) {
+                    console.log("Este documento tiene ", elemDom[i], " elementos.");
+                    demo.innerHTML += ' <span> Este documento tiene ' + elemDom[i] + ' elementos </span> <br>';
                 }
             }
         }

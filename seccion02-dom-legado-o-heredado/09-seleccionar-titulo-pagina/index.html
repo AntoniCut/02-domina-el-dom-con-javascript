@@ -8,7 +8,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title> Seleccionar Titulo de la Página - Sección 02 - DOM 0 Legado o Heredado - Domina el DOM con JavaScript -
+    <title> Sección 02 - DOM 0 Legado o Heredado - Domina el DOM con JavaScript -
         Udemy - Francisco
         Javier Arce Anguiano </title>
 
@@ -37,6 +37,10 @@
             margin-top: 20px;
             gap: 10px;
             font-size: 16px;
+        }
+
+        span {
+            background-color: aquamarine;
         }
 
         .botones-container {
@@ -79,14 +83,22 @@
 
         <button id="pulsar">Pulsar</button>
 
+        <p id="demo"> </p>
+
     </main>
 
     <!--  **********  Código JS  **********  -->
     <script>
 
+        //  ----------  document.title  ----------
+
+        const demo = document.getElementById('demo');
+
         document.getElementById("pulsar").onclick = function () {
-            var x = document.title;
+            const x = document.title;
             alert(x);
+            demo.innerHTML = `<span> ${x} </span>`;
+
         }
 
     </script>

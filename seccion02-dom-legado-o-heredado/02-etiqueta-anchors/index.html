@@ -8,7 +8,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title> Etiqueta Anchor - Sección 02 - DOM 0 Legado o Heredado - Domina el DOM con JavaScript - Udemy - Francisco
+    <title> Sección 02 - DOM 0 Legado o Heredado - Domina el DOM con JavaScript - Udemy - Francisco
         Javier Arce Anguiano </title>
 
     <!--  **********  Favicon  **********  -->
@@ -36,6 +36,10 @@
             margin-top: 20px;
             gap: 10px;
             font-size: 24px;
+        }
+
+        span {
+            background-color: aquamarine;
         }
 
         .botones-container {
@@ -86,43 +90,30 @@
         <div class="botones-container">
 
             <div class="botones">
-                <h3> Forma Antigua </h3>
                 <button id="anclas"> Pulsar </button>
             </div>
-
-            <div class="botones">
-                <h4> Forma Moderna </h4>
-                <button id="anclas2"> Pulsar </button>
-            </div>
-
-
+           
         </div>
 
-
-
-
-        <p id="demo"></p>
+        <p id="demo"> </p>
 
     </main>
 
     <!--  **********  Código JS  **********  -->
     <script>
 
-        //  -----  Forma Antigua  -----
+        //  ----------  document.anchors  ----------
         document.getElementById("anclas").onclick = function () {
-            var x = document.anchors.length;
-            alert("Este documento tiene " + x + " hipervínculos.");
+            
+            console.log("document.anchors: ", document.anchors);
+            const anchorsTotal = document.anchors.length;
+
+            for(let i=0; i<anchorsTotal; i++) console.log("document.anchors[" + i + "]: ", document.anchors[i]);
+                       
+            const demo = document.getElementById('demo');
+            demo.innerHTML = "<span> Este documento tiene " + anchorsTotal + " hipervínculos </span>";
         }
-
-        //  -----  Forma Moderna  -----
-        const boton = document.getElementById('anclas2');
-        boton.addEventListener('click', () => {
-
-            const anchors = document.querySelectorAll('a');
-            alert("Este documento tiene " + anchors.length + " hipervínculos.");
-
-        });
-
+        
     </script>
 
 </body>

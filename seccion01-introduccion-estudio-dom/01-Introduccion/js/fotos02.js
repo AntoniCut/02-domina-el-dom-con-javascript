@@ -9,69 +9,40 @@ window.onload = function () {
 	console.log("\n\n");
 	console.warn("*****  Forma Antigua  *****");
 
+	//  -----  Console-Time  -----
 	console.time("tiempo");
-	//Recuperamos las fotos dentro de la división
-	var fotos = document.querySelector("div");
 	
+	//  -----  Recuperamos las fotos dentro de la división  -----
+	const galeria = document.querySelector("#galeria");
+	console.log("galeria: ", galeria);
+
+	//  -----  Console-Dir  -----
 	console.dir(document.getElementsByTagName("img"));
 	console.info("info: ", "Hola, cara de bola");
 	console.warn("warn: ", "Hola, cara de bola");
 	console.error("error: ", "Hola, cara de bola");
 	console.log("log: ","Hola, cara de bola");
 	
+	//  -----  Console-Group  -----
 	console.group("group - Imagenes");
-	console.dir(document.querySelectorAll("img"));
+	const imagenes = document.querySelectorAll('img');
+	console.dir(imagenes);
 	console.groupEnd();
 	
+	//  -----  Console-Group-Collapsed  -----
 	console.groupCollapsed("group - collapse - Imágenes");
-	console.dir(document.querySelectorAll("img"));
+	console.dir(imagenes);
 	console.groupEnd();
 
-	//Listener
-	fotos.addEventListener("click", function (e) {
-		//Igualdad estricta
+	//  -----  Console-Time  -----
+	document.addEventListener("click", function (e) {
+		
+		console.log("e.target.tagName: ", e.target.tagName);
+		
 		if (e.target.tagName === "IMG") console.log("Pulso una imagen");
 		else console.log("NO pulso una imagen");
 		
-	}, false);
-	console.timeEnd("tiempo");
+	});
 
+	console.timeEnd("tiempo");
 }
-
-
-//  **********  Forma Moderna  **********
-document.addEventListener('DOMContentLoaded', function () {
-
-	console.log("\n\n");
-	console.warn("*****  Forma Moderna  *****");
-	
-	console.time("tiempo");
-
-	// Recuperamos las fotos dentro de la división
-	const fotos = document.querySelector("div");
-	
-	console.dir(document.getElementsByTagName("img"));
-	console.info("info: ", "Hola, cara de bola");
-	console.warn("warn: ", "Hola, cara de bola");
-	console.error("error: ", "Hola, cara de bola");
-	console.log("log: ","Hola, cara de bola");
-
-	console.group("group - Imagenes");
-	console.dir(document.querySelectorAll("img"));
-	console.groupEnd();
-	
-	console.groupCollapsed("group - collapse - Imágenes");
-	console.dir(document.querySelectorAll("img"));
-	console.groupEnd();
-
-
-	// Listener
-	fotos.addEventListener("click", (e) => {
-		// Igualdad estricta
-		if (e.target.tagName === "IMG") console.log("Pulso una imagen");
-		else console.log("NO pulso una imagen");
-		
-	}, false);
-
-	console.timeEnd("tiempo");
-});

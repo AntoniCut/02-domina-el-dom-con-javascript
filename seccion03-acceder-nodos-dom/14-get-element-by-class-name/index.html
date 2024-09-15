@@ -94,20 +94,23 @@
             <li class="rojo">Model</li>
         </ul>
 
+        <p id="demo"> </p>
+
     </main>
 
     <script>
+
+        //  ----------  getElementsByClassName  ----------
+
+        const demo = document.getElementById('demo');
 
         //  -----  Clase rojo  -----
         const claseRojo = document.getElementsByClassName('rojo');
         console.warn("clases rojo en LI: ", claseRojo);
         console.warn("Nº de clases rojo en LI: ", claseRojo.length);
 
-        const resultado1 = `<br> <span> Nº de clases rojo en LI: ${claseRojo.length} </span>`;
-        document.write(resultado1);
-
-        for(let i=0; i<claseRojo.length; i++) {
-            console.log("El contenido es: " + claseRojo[i].innerHTML);
+        for (let i = 0; i < claseRojo.length; i++) {
+            demo.innerHTML += `<br><span> texto de clases rojo en li ${claseRojo[i].innerText} y Nº de clase rojo ${claseRojo.length}  </span>`;
         }
 
         //  -----  Clase rojo y noexiste  -----
@@ -116,8 +119,7 @@
         console.warn("clases rojo y noexiste en LI: ", claseNoExiste);
         console.warn("Nº de clases rojo y noexiste en LI: ", claseNoExiste.length);
 
-        const resultado2 = `<br> <span> Nº de clases rojo y noexiste en LI: ${claseNoExiste.length} </span>`;
-        document.write(resultado2);
+        demo.innerHTML += `<br><br> <span> Nº de clases rojo y noexiste en la etiqueta li: ${claseNoExiste.length} </span>`;
 
     </script>
 

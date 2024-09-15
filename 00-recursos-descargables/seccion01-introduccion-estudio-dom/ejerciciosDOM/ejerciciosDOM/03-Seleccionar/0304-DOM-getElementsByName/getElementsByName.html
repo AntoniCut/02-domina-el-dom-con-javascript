@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>getElementsByName</title>
+<meta charset="utf-8">
+</head>
+<body>
+
+Español:  <input name="idioma" type="checkbox" value="espanol">
+Inglés:  <input name="idioma" type="checkbox" value="ingles">
+Francés:  <input name="idioma" type="checkbox" value="frances">
+Portugués:  <input name="idioma" type="checkbox" value="portugues">
+Alemán:  <input name="idioma" type="checkbox" value="aleman">
+Ruso:  <input name="idioma" type="checkbox" value="ruso">
+
+<p>Seleccionar todos: <button id="pulsar">Pulsar</button></p>
+
+<script>
+document.getElementById("pulsar").onclick = function() {
+    var x = document.getElementsByName("idioma");
+    for (var i = 0; i < x.length; i++) {
+        if (x[i].type == "checkbox") {
+            x[i].checked = true;
+        }
+    }
+}
+</script>
+
+</body>
+</html>
+

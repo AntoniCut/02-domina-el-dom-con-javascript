@@ -8,7 +8,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title> Guardar, Modificar y Leer Cookies - Sección 02 - DOM 0 Legado o Heredado - Domina el DOM con JavaScript -
+    <title> Sección 02 - DOM 0 Legado o Heredado - Domina el DOM con JavaScript -
         Udemy - Francisco
         Javier Arce Anguiano </title>
 
@@ -27,6 +27,9 @@
             border: 1px solid green;
         }
 
+        span {
+            background-color: aquamarine;
+        }
         .main {
             display: flex;
             flex-direction: column;
@@ -60,8 +63,12 @@
         }
     </style>
 
+
     <!--  **********  Código JS  **********  -->
     <script>
+
+        //  ----------  document.cookie  ----------
+
 
         function guardaCookie(nombre, valor, tiempo) {
             
@@ -72,6 +79,7 @@
             
             document.cookie = nombre + "=" + valor + ";" + expira + ";path=/";
             alert(nombre + "=" + valor + ";" + expira + ";path=/");
+            console.log(nombre + "=" + valor + ";" + expira + ";path=/");
         }
 
         function recuperaCookie(nombre) {
@@ -80,6 +88,7 @@
             var ca = document.cookie.split(';');
             
             alert(document.cookie);
+            console.log(document.cookie);
             
             for (var i = 0; i < ca.length; i++) {
                 var c = ca[i];
@@ -99,6 +108,8 @@
             
             if (usuario != "") {
                 alert("Hola nuevamente " + usuario);
+                console.log("Hola nuevamente " + usuario);
+
             } else {
                 usuario = prompt("¿Cómo te llamas?:", "");
                 if (usuario != "" && usuario != null) {

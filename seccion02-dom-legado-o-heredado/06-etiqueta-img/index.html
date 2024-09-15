@@ -26,6 +26,11 @@
             border: 1px solid green;
         }
 
+        span {
+            background-color: aquamarine;
+        }
+
+
         .main {
             display: flex;
             flex-direction: column;
@@ -82,19 +87,28 @@
 
         <button id="pulsar">Pulsar</button>
 
+        <p id="demo"> </p>
+        
+
     </main>
 
     <!--  **********  Código JS  **********  -->
     <script>
         
+        //  ----------  document.images  ----------
+
+        const demo = document.getElementById('demo');
+        
         document.getElementById("pulsar").onclick = function () {
             
-            var x = document.images, cadena = "";
+            const x = document.images;
+            let cadena = "";
             
             for (var i = 0; i < x.length; i++) {
                 cadena += x[i].src + "\n";
             }
             alert(cadena);
+            demo.innerHTML += `<span> ${cadena} </span> <br>`;
         }
 
     </script>

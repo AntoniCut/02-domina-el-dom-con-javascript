@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>ClassName DOM</title>
+	<style>
+		div{
+			width: 400px;
+			text-align: center;
+			padding: 1em;
+			border: 1px solid black;
+		}
+		.activo{
+			background-color: green;
+			color:  white;
+		}
+		.inactivo{
+			background-color: red;
+			color: yellow;
+		}
+			
+	</style>
+	<script>
+	window.onload = function() {
+		let div = document.getElementById('division');
+		let boton = document.getElementById("activar");
+		boton.addEventListener("click",(e)=>{
+			if(div.className === 'activo'){
+			    div.className = 'inactivo';
+			    div.innerText = "Esta es la división está inactiva";
+			    boton.innerText = "Activar";
+			} else {
+			    div.className = 'activo';
+			    div.innerText = "Esta es la división está activa";
+			    boton.innerText = "Desactivar";
+			}
+		},false);
+	}
+	</script>
+</head>
+<body>
+	<div id="division" class="activo">Esta es la división está activa</div>
+	<button id="activar">Desactivar</button>
+</body>
+</html>

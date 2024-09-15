@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>DOM | onkeypress</title>
+<script>
+//Uso del evento onSubmit para verificar una forma
+window.onload = function(){
+  //Instancias
+  var nombre = document.getElementById("nombre");
+  //
+  nombre.onkeypress = function(e){
+    //Safari no tiene la propiedad "key"
+    var k = e.key;
+    var patt = /[0-9]+/;
+    var res = patt.test(k);
+    if(res) alert("No puede escribir números en un nombre");
+    return !res;
+  }
+}
+</script>
+</head>
+
+<body>
+<form id="forma" name="forma" method="post" action="valida.php">
+  <p>
+    <label for="nombre">Nombre:</label>
+    <input type="text" name="nombre" id="nombre" />
+  </p>
+  <p>
+    <input type="submit" name="enviar" id="enviar" value="Enviar" />
+  </p>
+</form>
+</body>
+</html>

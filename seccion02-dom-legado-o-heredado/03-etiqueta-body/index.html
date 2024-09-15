@@ -8,7 +8,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title> Etiqueta Body - Sección 02 - DOM 0 Legado o Heredado - Domina el DOM con JavaScript - Udemy - Francisco
+    <title> Sección 02 - DOM 0 Legado o Heredado - Domina el DOM con JavaScript - Udemy - Francisco
         Javier Arce Anguiano </title>
 
     <!--  **********  Favicon  **********  -->
@@ -74,7 +74,7 @@
     <!--  **********  Contenido  **********  -->
     <main class="main">
 
-        <p>Selecciona el color de fondo - Forma Antigua.</p>
+        <p> Selecciona el color de fondo </p>
 
         <div class="botones-container">
             <button id="rojo">Rojo</button>
@@ -82,23 +82,13 @@
             <button id="amarillo">Amarillo</button>
         </div>
 
-        <p>Selecciona el color de fondo - Forma Moderna.</p>
-
-        <div class="botones-container">
-            <button id="rojo2">Rojo</button>
-            <button id="verde2">Verde</button>
-            <button id="amarillo2">Amarillo</button>
-        </div>
-
-
-
-
     </main>
 
     <!--  **********  Código JS  **********  -->
     <script>
 
-        //  **********  Forma Antigua  **********
+        //  ----------  document.body  ----------
+        
         document.getElementById("rojo").onclick = function () {
             document.body.style.backgroundColor = "red";
         }
@@ -108,25 +98,6 @@
         document.getElementById("amarillo").onclick = function () {
             document.body.style.backgroundColor = "yellow";
         }
-
-        //  **********  Forma Moderna  **********
-        const btnRojo = document.getElementById('rojo2');
-        const btnVerde = document.getElementById('verde2');
-        const btnAmarillo = document.getElementById('amarillo2');
-        
-        const body = document.querySelector('body');
-
-        btnRojo.addEventListener('click', () => {
-            body.style.backgroundColor = "red";
-        });
-
-        btnVerde.addEventListener('click', () => {
-            body.style.backgroundColor = "green";
-        });
-
-        btnAmarillo.addEventListener('click', () => {
-            body.style.backgroundColor = "yellow";
-        });
 
 
     </script>

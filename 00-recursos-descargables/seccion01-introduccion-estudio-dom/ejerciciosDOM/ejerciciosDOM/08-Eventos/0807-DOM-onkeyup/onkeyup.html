@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+<meta charset="utf-8" />
+<title>DOM | onkeyup</title>
+<script>
+	// Pasa a mayúsculas
+	var caja;
+	window.onload = function(){
+		caja = document.getElementById("caja");	
+		//Detecta el evento pulsando una tecla
+		caja.onkeyup = function(){
+			caja.value = caja.value.toUpperCase();	
+		}
+	}	
+</script>
+</head>
+
+<body>
+<p>Escribe sobre la caja de entrada en letras minúsculas y JavaScript las pasará a Mayúsculas</p>
+<form>
+  <label for="caja">Escribe aqui: </label>
+  <input name="caja" type="text" id="caja" size="60" />
+</form>
+</body>
+</html>
