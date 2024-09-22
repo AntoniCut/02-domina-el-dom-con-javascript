@@ -1,6 +1,6 @@
-<!--  ******************************************************************************************************************  -->
-<!--  **********  /02-domina-el-dom-con-javascript/seccion06-navegar-estructura-dom/40-parentnode/index.html  **********  -->
-<!--  ******************************************************************************************************************  -->
+<!--  ****************************************************************************************************************************  -->
+<!--  **********  /02-domina-el-dom-con-javascript/seccion06-navegar-estructura-dom/43-firstchild-lastchild/index.html  **********  -->
+<!--  ****************************************************************************************************************************  -->
 
 
 <!DOCTYPE html>
@@ -75,25 +75,12 @@
 
         /*  **********  */
 
-        div {
-            box-sizing: border-box;
-            padding: 12px;
-            width: 400px;
-            background-color: coral;
-            color: white;
-            margin: 0 auto;
-            text-align: center;
+        .rojo {
+            color: red;
         }
 
-        .cerrar {
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .cerrar:hover {
-            color: #000;
+        .verde {
+            color: green;
         }
     </style>
 
@@ -105,49 +92,42 @@
     <!--  **********  Header o Cabecera  **********  -->
     <header class="header">
 
-        <h1> Sección 06 - La Propiedad parentNode. </h1>
+        <h1> Sección 06 - Las Propiedades firstChild y lastChild. </h1>
         <hr>
     </header>
 
     <!--  **********  Contenido  **********  -->
     <main class="main">
 
-        <!--  -----  Ejercicio 1  -----  -->
         <h1>Introducción al DOM</h1>
         <p>¿Qué es el DOM?</p>
-        <ul id="dom">
-            <li id="documento">Document</li>
-            <li id="objeto">Object</li>
-            <li id="modelo">Model</li>
+        <ul>
+            <li>Document</li>
+            <li>Object</li>
+            <li>Model</li>
         </ul>
-
-        <p>Pulse para ver el nodo padre de la lista de items.</p>
-
-        <button id="pulsar">Pulsar</button>
-
-        <!--  -----  Ejercicio 2  -----  -->
-        <div>
-            <span id="tache" class="cerrar">&times;</span>
-            <p>¡Cuidado! el contenido de esta página no es apto para todo el público. Se recomienda discreción.</p>
-        </div>
 
     </main>
 
     <!--  **********  Código JS  **********  -->
     <script>
 
-        //  -----  Ejercicio 1  -----
-        document.getElementById("pulsar").onclick = function () {
-            var x = document.getElementById("documento").parentNode.nodeName;
-            alert(x);
-        }
+        //Las propiedades “firstChild” y “lastChild” 
+        //regresan el primer y el último nodo de una “nodeList”.
+        //Regresa un nodo ya sea elemento, texto o comentario.
+        //Son propiedades de sólo lectura.
 
-        //  -----  Ejercicio 2  -----
-        document.getElementById("tache").onclick = function () {
+        //Seleccionamos a la etiqueta "ul" y todo su contenido
+        var lista = document.querySelector("ul");
 
-            this.parentNode.style.display = 'none';
-            console.log(this.parentNode);
-        }
+        //Seleccionamos al primer nodo hijo
+        //lista.firstChild.setAttribute("class", "verde");      //  no funciona
+        lista.firstElementChild.setAttribute("class", "verde");
+
+        //Seleccionamos el último de los nodos hijos
+        //lista.lastChild.setAttribute("class", "rojo");        //  no funciona
+        lista.lastElementChild.setAttribute("class", "rojo");
+
 
     </script>
 

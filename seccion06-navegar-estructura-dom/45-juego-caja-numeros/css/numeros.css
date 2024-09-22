@@ -1,0 +1,46 @@
+/*  ***************************************************************************************************************************  */
+/*  **********  /02-domina-el-dom-con-javascript/seccion06-navegar-estructura-dom/45-juego-caja-numeros/js/caja.css  **********  */
+/*  ***************************************************************************************************************************  */
+
+
+.main {
+    width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+h2 {
+    height: 0; 
+    padding:188px 0 0 0; 
+    width:251px; 
+}
+
+#tablero {
+    height: 280px; 
+    padding: 26px; 
+    width: 280px;
+}
+
+#tablero table { 
+    width: 276px; 
+    background-color: orange;
+}
+
+#tablero td { 
+    width:30px; 
+    height: 30px; 
+    padding: 9px; 
+    margin: 0; 
+}
+
+p {
+    font-size: 44px;
+    text-align: center;
+    margin: 0;
+    width: 50px;
+    height: 50px;
+    background-color: orange;
+    color: white;
+    cursor: pointer;
+}

@@ -1,0 +1,153 @@
+<!--  **************************************************************************************************************************  -->
+<!--  **********  /02-domina-el-dom-con-javascript/seccion06-navegar-estructura-dom/45-juego-caja-numeros/index.html  **********  -->
+<!--  **************************************************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> Sección 06 - Navegar en la Estructura DOM - Domina el DOM con JavaScript -
+        Udemy - Francisco
+        Javier Arce Anguiano </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="img/favicon-JS-2.ico">
+
+    <link rel="stylesheet" href="css/numeros.css">
+
+    <!--  **********  Estilos  **********  -->
+    <style>
+        .header {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid green;
+        }
+
+       
+        .botones-container {
+            display: flex;
+            gap: 100px;
+        }
+
+        .botones {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        button {
+            width: auto;
+            color: white;
+            background-color: blueviolet;
+            padding: 10px;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+      
+
+        img {
+            margin-left: 6px;
+            margin-right: 6px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        /*  **********  */
+        
+    </style>
+
+</head>
+
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Sección 06 - Juego de Caja de Números. </h1>
+        <hr>
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+        <div id="numeros">
+                    
+            <div id="tablero">
+                
+                <table cellpadding="0" cellspacing="0" border="2">
+                    <tr>
+                        <td id="celda11">
+                            <p>7</p>
+                        </td>
+                        <td id="celda12">
+                            <p>6</p>
+                        </td>
+                        <td id="celda13">
+                            <p>14</p>
+                        </td>
+                        <td id="celda14">
+                            <p>11</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="celda21">
+                            <p>12</p>
+                        </td>
+                        <td id="celda22">
+                            <p>&nbsp;</p>
+                        </td>
+                        <td id="celda23">
+                            <p>5</p>
+                        </td>
+                        <td id="celda24">
+                            <p>13</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="celda31">
+                            <p>8</p>
+                        </td>
+                        <td id="celda32">
+                            <p>10</p>
+                        </td>
+                        <td id="celda33">
+                            <p>1</p>
+                        </td>
+                        <td id="celda34">
+                            <p>15</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td id="celda41">
+                            <p>4</p>
+                        </td>
+                        <td id="celda42">
+                            <p>2</p>
+                        </td>
+                        <td id="celda43">
+                            <p>9</p>
+                        </td>
+                        <td id="celda44">
+                            <p>3</p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+
+    </main>
+
+    <!--  **********  Código JS  **********  -->
+    <script src="js/caja.js"> </script>
+
+</body>
+
+</html>

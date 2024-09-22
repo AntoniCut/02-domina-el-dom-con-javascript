@@ -1,6 +1,6 @@
-<!--  ******************************************************************************************************************  -->
-<!--  **********  /02-domina-el-dom-con-javascript/seccion06-navegar-estructura-dom/40-parentnode/index.html  **********  -->
-<!--  ******************************************************************************************************************  -->
+<!--  ****************************************************************************************************************  -->
+<!--  **********  /02-domina-el-dom-con-javascript/seccion06-navegar-estructura-dom/42-children/index.html  **********  -->
+<!--  ****************************************************************************************************************  -->
 
 
 <!DOCTYPE html>
@@ -74,27 +74,6 @@
         }
 
         /*  **********  */
-
-        div {
-            box-sizing: border-box;
-            padding: 12px;
-            width: 400px;
-            background-color: coral;
-            color: white;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .cerrar {
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-
-        .cerrar:hover {
-            color: #000;
-        }
     </style>
 
 </head>
@@ -105,49 +84,60 @@
     <!--  **********  Header o Cabecera  **********  -->
     <header class="header">
 
-        <h1> Sección 06 - La Propiedad parentNode. </h1>
+        <h1> Sección 06 - La Propiedad children. </h1>
         <hr>
     </header>
 
     <!--  **********  Contenido  **********  -->
     <main class="main">
 
-        <!--  -----  Ejercicio 1  -----  -->
         <h1>Introducción al DOM</h1>
         <p>¿Qué es el DOM?</p>
         <ul id="dom">
             <li id="documento">Document</li>
             <li id="objeto">Object</li>
             <li id="modelo">Model</li>
+            <li id="cuatro">Cuatro</li>
         </ul>
 
         <p>Pulse para ver el nodo padre de la lista de items.</p>
 
         <button id="pulsar">Pulsar</button>
 
-        <!--  -----  Ejercicio 2  -----  -->
-        <div>
-            <span id="tache" class="cerrar">&times;</span>
-            <p>¡Cuidado! el contenido de esta página no es apto para todo el público. Se recomienda discreción.</p>
-        </div>
 
     </main>
 
     <!--  **********  Código JS  **********  -->
     <script>
 
-        //  -----  Ejercicio 1  -----
+        /*
+            Regresa la colección de los nodos hijos.
+
+            Los nodos aparecen según aparecen los nodos en el código fuente.
+            Se indexan como arreglos, iniciando en cero.
+
+            Los espacios en blanco, los tabuladores y los saltos de línea, 
+            NO se consideran como nodos de texto.
+
+            La propiedad “length” regresa el número de nodos del “nodeList”.
+        */
+
+
+        var c = 0;
+        
         document.getElementById("pulsar").onclick = function () {
-            var x = document.getElementById("documento").parentNode.nodeName;
-            alert(x);
+            
+            var colores = new Array("blue", "red", "green", "yellow");
+            var x = document.body.children;
+            
+            for (var i = 0; i < x.length; i++) {
+                x[i].style.color = colores[c];
+            }
+            
+            c++;
+            if (c == colores.length) c = 0;
         }
 
-        //  -----  Ejercicio 2  -----
-        document.getElementById("tache").onclick = function () {
-
-            this.parentNode.style.display = 'none';
-            console.log(this.parentNode);
-        }
 
     </script>
 
