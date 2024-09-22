@@ -1,4 +1,10 @@
+//  ************************************************************************************************************************  
+//  **********  /02-domina-el-dom-con-javascript/seccion04-modificar-nodos-y-sus-propiedades/23-style/index.html  **********  
+//  ************************************************************************************************************************  
+
+
 window.onload = function(){
+	
 	//Recuperamos las fotos dentro de la división
 	var fotos = document.querySelector("div");
 	

@@ -1,6 +1,6 @@
-<!--  ************************************************************************************************************************  -->
-<!--  **********  /02-domina-el-dom-con-javascript/seccion04-modificar-nodos-y-sus-propiedades/23-style/index.html  **********  -->
-<!--  ************************************************************************************************************************  -->
+<!--  ****************************************************************************************************************************  -->
+<!--  **********  /02-domina-el-dom-con-javascript/seccion04-modificar-nodos-y-sus-propiedades/24-classlist/index.html  **********  -->
+<!--  ****************************************************************************************************************************  -->
 
 
 <!DOCTYPE html>
@@ -51,7 +51,7 @@
         }
 
         button {
-            width: 100px;
+            width: auto;
             color: white;
             background-color: blueviolet;
             padding: 10px;
@@ -77,6 +77,35 @@
             width: 690px;
             height: 450px;
         }
+
+        /*  **********  */
+
+        .clase1 {
+            width: 500px;
+            height: 80px;
+            padding: 15px;
+            border: 1px solid black;
+        }
+
+        .clase2 {
+            background-color: coral;
+            color: yellow;
+        }
+
+        .clase3 {
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 25px;
+        }
+
+        .clase4 {
+            background-color: blue;
+            color: white;
+        }
+
+        .clase5 {
+            text-decoration: underline;
+        }
     </style>
 
 </head>
@@ -87,29 +116,79 @@
     <!--  **********  Header o Cabecera  **********  -->
     <header class="header">
 
-        <h1> Sección 04 - style. </h1>
+        <h1> Sección 04 - Classlist. </h1>
         <hr>
     </header>
 
     <!--  **********  Contenido  **********  -->
     <main class="main">
 
-        <h1>Edificios antiguos griegos</h1>
-        <div>
-            <img src="imagenes/fondos/minis/fondo1.jpg" width="100" height="60">
-            <img src="imagenes/fondos/minis/fondo2.jpg" width="100" height="60">
-            <img src="imagenes/fondos/minis/fondo3.jpg" width="100" height="60">
-            <img src="imagenes/fondos/minis/fondo4.jpg" width="100" height="60">
-            <img src="imagenes/fondos/minis/fondo5.jpg" width="100" height="60">
-            <img src="imagenes/fondos/minis/fondo6.jpg" width="100" height="60">
+        <h2> Aplicar las clases a una elemento </h2>
+
+        <div class="botones-container">
+            <button id="pulsar1">Añadir estilos</button>
+            <button id="pulsar2">Contar los estilos</button>
+            <button id="pulsar3">Mostrar los estilos</button>
+            <button id="pulsar4">Quitar color</button>
+            <button id="pulsar5">Quitar estilos</button>
+            <button id="pulsar6">Alternar color</button>
+            <button id="pulsar7">Alternar subrayado</button>
         </div>
 
-        <div id="foto"> </div>
+
+        <h2><strong>Nota:</strong> La propiedad "classList" no es soportado por IE9-</h2>
+
+        <div id="poema">
+            En el agua clara que brota en la fuente, un lindo pescado sale de repente.
+        </div>
 
     </main>
 
     <!--  **********  Código JS  **********  -->
-    <script src="js/fotos02.js">
+    <script>
+
+        //  -----  Añadir Estilos  -----
+        document.getElementById("pulsar1").onclick = function () {
+            document.getElementById("poema").classList.add("clase1", "clase2", "clase3");
+        }
+
+        //  -----  Contar Numeros de Estilos  -----
+        document.getElementById("pulsar2").onclick = function () {
+            var x = document.getElementById("poema").classList.length;
+            alert("El texto tiene " + x + " clases");
+        }
+
+        //  -----  Mostrar los Estilos  -----
+        document.getElementById("pulsar3").onclick = function () {
+            var x = document.getElementById("poema").classList;
+            alert("Las clases en el texto : " + x);
+        }
+
+        //  -----  Quitart Colores  -----
+        document.getElementById("pulsar4").onclick = function () {
+            document.getElementById("poema").classList.remove("clase2");
+        }
+
+        //  -----  Quitar Estilos  -----
+        document.getElementById("pulsar5").onclick = function () {
+            document.getElementById("poema").classList.remove("clase1", "clase2", "clase3");
+        }
+
+        //  -----  Alternar Colores  -----
+        document.getElementById("pulsar6").onclick = function () {
+            document.getElementById("poema").classList.toggle("clase4");
+        }
+
+        //  -----  Alternar Subrayado  -----
+        document.getElementById("pulsar7").onclick = function () {
+            var x = document.getElementById("poema");
+            if (x.classList.contains("clase5")) {
+                x.classList.remove("clase5");
+            } else {
+                x.classList.add("clase5");
+            }
+        }
+
 
     </script>
 

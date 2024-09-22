@@ -1,0 +1,143 @@
+<!--  ****************************************************************************************************************************  -->
+<!--  **********  /02-domina-el-dom-con-javascript/seccion04-modificar-nodos-y-sus-propiedades/24-classlist/index.html  **********  -->
+<!--  ****************************************************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> Sección 04 - Modifica Nodos y sus Propiedades - Domina el DOM con JavaScript -
+        Udemy - Francisco
+        Javier Arce Anguiano </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="img/favicon-JS-2.ico">
+
+    <!--  **********  Estilos  **********  -->
+    <style>
+        .header {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid green;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 20px;
+            gap: 10px;
+            font-size: 16px;
+        }
+
+        .botones-container {
+            display: flex;
+            gap: 100px;
+        }
+
+        .botones {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        button {
+            width: 100px;
+            color: white;
+            background-color: blueviolet;
+            padding: 10px;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        span {
+            background-color: aquamarine;
+            color: black;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        img {
+            margin-left: 6px;
+            margin-right: 6px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        #foto {
+            width: 690px;
+            height: 450px;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Sección 04 - ClassList. </h1>
+        <hr>
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+        <h1>Edificios antiguos griegos</h1>
+        <div>
+            <img src="imagenes/fondos/minis/fondo1.jpg" width="100" height="60">
+            <img src="imagenes/fondos/minis/fondo2.jpg" width="100" height="60">
+            <img src="imagenes/fondos/minis/fondo3.jpg" width="100" height="60">
+            <img src="imagenes/fondos/minis/fondo4.jpg" width="100" height="60">
+            <img src="imagenes/fondos/minis/fondo5.jpg" width="100" height="60">
+            <img src="imagenes/fondos/minis/fondo6.jpg" width="100" height="60">
+        </div>
+
+        <div id="foto"> </div>
+
+    </main>
+
+    <!--  **********  Código JS  **********  -->
+    <script>
+
+
+        window.onload = function () {
+
+            //Recuperamos las fotos dentro de la división
+            var fotos = document.querySelector("div");
+
+            //Listener
+            fotos.addEventListener("click", function (e) {
+                //Igualdad estricta
+                if (e.target.tagName === "IMG") {
+                    //Crear la imagen
+                    var archivoMini = e.target.src;
+                    var archivo = archivoMini.substr(archivoMini.length - 10, 10);
+                    //console.log(archivo);
+                    var imagenGrande = "url('imagenes/fondos/" + archivo + "')";
+                    //alert(imagenGrande);
+                    //con style modificamos los estilos, no los atributos
+                    document.getElementById("foto").style.backgroundImage = imagenGrande;
+                } else {
+                    console.log("NO pulso una imagen");
+                }
+            }, false);
+        }
+
+
+    </script>
+
+</body>
+
+</html>

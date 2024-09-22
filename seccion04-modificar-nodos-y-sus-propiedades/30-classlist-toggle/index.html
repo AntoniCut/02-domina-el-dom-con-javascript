@@ -1,0 +1,143 @@
+<!--  ***********************************************************************************************************************************  -->
+<!--  **********  /02-domina-el-dom-con-javascript/seccion04-modificar-nodos-y-sus-propiedades/30-classlist-toggle/index.html  **********  -->
+<!--  ***********************************************************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> Sección 04 - Modifica Nodos y sus Propiedades - Domina el DOM con JavaScript -
+        Udemy - Francisco
+        Javier Arce Anguiano </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="img/favicon-JS-2.ico">
+
+    <!--  **********  Estilos  **********  -->
+    <style>
+        .header {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid green;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 20px;
+            gap: 10px;
+            font-size: 16px;
+        }
+
+        .botones-container {
+            display: flex;
+            gap: 100px;
+        }
+
+        .botones {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        button {
+            width: 100px;
+            color: white;
+            background-color: blueviolet;
+            padding: 10px;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        span {
+            background-color: aquamarine;
+            color: black;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        img {
+            margin-left: 6px;
+            margin-right: 6px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        #foto {
+            width: 690px;
+            height: 450px;
+        }
+
+        /*  **********  */
+
+        .mystyle {
+            width: 300px;
+            height: 50px;
+            line-height: 50px;
+            background-color: coral;
+            color: white;
+            font-size: 25px;
+        }
+
+        .newClassName {
+            width: 400px;
+            height: 100px;
+            line-height: 100px;
+            background-color: lightblue;
+            text-align: center;
+            font-size: 25px;
+            color: navy;
+            margin-bottom: 10px;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Sección 04 - ClassList - Toggle. </h1>
+        <hr>
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+        <h2>Click the button to toggle between two classes.</h2>
+
+        <button onclick="myFunction()">Try it</button>
+
+        <p><strong>Note:</strong> The classList property is not supported in Internet Explorer 9 and earlier versions.
+        </p>
+
+        <div id="myDIV" class="mystyle">
+            I am a DIV element
+        </div>
+
+    </main>
+
+    <!--  **********  Código JS  **********  -->
+    <script>
+
+        function myFunction() {
+            document.getElementById("myDIV").classList.toggle("newClassName");
+        }
+
+    </script>
+
+</body>
+
+</html>
