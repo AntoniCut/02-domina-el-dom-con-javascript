@@ -1,0 +1,123 @@
+<!--  **************************************************************************************************************************  -->
+<!--  **********  /02-domina-el-dom-con-javascript/seccion05-crear-modificar-eliminar-nodos/37-clone-node/index.html  **********  -->
+<!--  **************************************************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> Sección 05 - Crear, Modificar y Eliminar Nodos - Domina el DOM con JavaScript -
+        Udemy - Francisco
+        Javier Arce Anguiano </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="img/favicon-JS-2.ico">
+
+    <!--  **********  Estilos  **********  -->
+    <style>
+        .header {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid green;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 20px;
+            gap: 10px;
+            font-size: 16px;
+        }
+
+        .botones-container {
+            display: flex;
+            gap: 100px;
+        }
+
+        .botones {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        button {
+            width: auto;
+            color: white;
+            background-color: blueviolet;
+            padding: 10px;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        span {
+            background-color: aquamarine;
+            color: black;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        img {
+            margin-left: 6px;
+            margin-right: 6px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+
+        /*  **********  */
+    </style>
+
+</head>
+
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Sección 05 - Clonar un Nodo de una Estructura DOM - cloneNode(). </h1>
+        <hr>
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+        <div id="fotos">
+            <img id="foto1" src="imagenes/fondo1.jpg" />
+            <img id="foto2" src="imagenes/fondo1.jpg" />
+        </div>
+        <button id="pulsar">Duplicar</button>
+
+    </main>
+
+    <!--  **********  Código JS  **********  -->
+    <script>
+
+        document.getElementById("pulsar").onclick = function () {
+
+            const fotos = document.getElementById("fotos");
+
+            //El parámetro es opcional: true clona todos los hijos (children) 
+            //y falso sólo la etiqueta.
+            const clone = fotos.cloneNode(true);
+            console.log(clone);
+
+            //Necesitamos los métodos addChild() e insertBefore().
+            document.getElementsByTagName('div')[0].appendChild(clone);
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,165 @@
+<!--  ***************************************************************************************************************************  -->
+<!--  **********  /02-domina-el-dom-con-javascript/seccion05-crear-modificar-eliminar-nodos/34-crear-nodos/index.html  **********  -->
+<!--  ***************************************************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> Sección 05 - Crear, Modificar y Eliminar Nodos - Domina el DOM con JavaScript -
+        Udemy - Francisco
+        Javier Arce Anguiano </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="img/favicon-JS-2.ico">
+
+    <!--  **********  Estilos  **********  -->
+    <style>
+        .header {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid green;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 20px;
+            gap: 10px;
+            font-size: 16px;
+        }
+
+        .botones-container {
+            display: flex;
+            gap: 100px;
+        }
+
+        .botones {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        button {
+            width: 100px;
+            color: white;
+            background-color: blueviolet;
+            padding: 10px;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        span {
+            background-color: aquamarine;
+            color: black;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        img {
+            margin-left: 6px;
+            margin-right: 6px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        #foto {
+            width: 690px;
+            height: 450px;
+        }
+
+        /*  **********  */
+
+        #sabias {
+            width: 400px;
+            text-align: center;
+            padding: 1em;
+            border: 1px solid black;
+        }
+
+        .activo {
+            background-color: green;
+            color: white;
+        }
+
+        .inactivo {
+            background-color: red;
+            color: yellow;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Sección 05 - Crear un Nodo con createElement() y addChild(). </h1>
+        <hr>
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+        <h1>Introducción al DOM</h1>
+        <p>¿Qué es el DOM?</p>
+
+        <ul id="dom">
+            <li>Document</li>
+            <li>Object</li>
+            <li>Model</li>
+        </ul>
+        <div id="sabias">&nbsp;</div>
+
+    </main>
+
+    <!--  **********  Código JS  **********  -->
+    <script>
+
+        //Creamos un arreglo
+        var textos = new Array();
+        textos.push("Adrodita nació de la espuma del mar...");
+        textos.push("Una pelota de golf puede ser más letal que una bala...");
+        textos.push("Las abejas tienen emociones...");
+        textos.push("El arte es bueno para la salud...");
+        textos.push("Las rayas de la cebra auyentan a las mosca...");
+        textos.push("Las papas disminuyen la presión arterial...");
+        
+        //Creamos un número aleatorio
+        var num = Math.floor(Math.random() * textos.length);
+
+        //1) Creamos los objetos vacios por medio de createElement()
+        //Se crean vacias y de momento no se visualizan
+        var titulo = document.createElement("h1");
+        var fecha = document.createElement("h3");
+        var texto = document.createElement("p");
+
+        //2) Llenamos con contenido a los objetos
+        //Que estaban vacias (poblar o populate)
+        titulo.innerHTML = "¿Sabías que...?";
+        texto.innerHTML = textos[num];
+        fecha.innerHTML = new Date();
+
+        //3) Los añadimos al documento DOM por medio de appendChild
+        //lo añadimos a la etiqueta con identificador "sabias"
+        document.getElementById("sabias").appendChild(titulo);
+        document.getElementById("sabias").appendChild(fecha);
+        document.getElementById("sabias").appendChild(texto);
+
+    </script>
+
+</body>
+
+</html>
