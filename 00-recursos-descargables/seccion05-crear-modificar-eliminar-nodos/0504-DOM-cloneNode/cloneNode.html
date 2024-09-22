@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM | cloneNode</title>
+<style>*{margin:0; padding:0;}</style>
+</head>
+
+<body>
+<div>
+<img id="foto" src="imagenes/fondo1.jpg"/>
+</div>
+<button id="pulsar">Duplicar</button>
+<script>
+document.getElementById("pulsar").onclick = function(){
+	var f = document.getElementById("foto");
+	//El parámetro es opcional: true clona todos los hijos (children) 
+	//y falso sólo la etiqueta.
+	var clone = f.cloneNode(true);
+	//Necesitamos los métodos addChild() e insertBefore().
+	document.getElementsByTagName("div")[0].appendChild(clone);
+}
+</script>
+</body>
+</html>
