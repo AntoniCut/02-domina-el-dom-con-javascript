@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DOM | childNodes</title>
+	<meta charset="utf-8"/>
+</head>
+<body>
+<h1>Introducción al DOM</h1>
+<p>¿Qué es el DOM?</p>
+<ul id="dom">
+<li id="documento">Document</li>
+<li id="objeto">Object</li>
+<li id="modelo">Model</li>
+</ul>
+
+<p>Pulse para ver el nodo padre de la lista de items.</p>
+
+<button id="pulsar">Pulsar</button>
+
+<script>
+//Regresa la colección de los nodos hijos.
+//Los nodos aparecen según aparecen los nodos en el código fuente.
+//Se indexan como arreglos, iniciando en cero.
+//Los espacios en blanco, los tabuladores y los saltos de línea, 
+//se consideran como nodos de texto.
+//La propiedad “length” regresa el número de nodos del “nodeList”.
+document.getElementById("pulsar").onclick = function() {
+	var colores = new Array("blue","red","green","yellow");
+    var x = document.body.childNodes;
+    var c = 0;
+    for(var i=0; i<x.length; i++){
+        //1 es una etiqueta
+    	if(x[i].nodeType==1){
+    		x[i].style.color = colores[c];
+    		c++;
+    		if(c==colores.length) c = 0;
+    	} 
+    }
+}
+</script>
+
+</body>
+</html>

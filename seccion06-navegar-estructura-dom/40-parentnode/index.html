@@ -1,0 +1,140 @@
+<!--  *****************************************************************************************************************************  -->
+<!--  **********  /02-domina-el-dom-con-javascript/seccion05-crear-modificar-eliminar-nodos/39-replace-child/index.html  **********  -->
+<!--  *****************************************************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> Sección 05 - Crear, Modificar y Eliminar Nodos - Domina el DOM con JavaScript -
+        Udemy - Francisco
+        Javier Arce Anguiano </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="img/favicon-JS-2.ico">
+
+    <!--  **********  Estilos  **********  -->
+    <style>
+        .header {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid green;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 20px;
+            gap: 10px;
+            font-size: 16px;
+        }
+
+        .botones-container {
+            display: flex;
+            gap: 100px;
+        }
+
+        .botones {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        button {
+            width: auto;
+            color: white;
+            background-color: blueviolet;
+            padding: 10px;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        span {
+            background-color: aquamarine;
+            color: black;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        img {
+            margin-left: 6px;
+            margin-right: 6px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+
+        /*  **********  */
+    </style>
+
+</head>
+
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Sección 05 - Reemplazar un Nodo con replaceChild(). </h1>
+        <hr>
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+        <h2>¿Qué es el DOM?</h2>
+
+        <ul id="dom">
+            <li id="documento">Document</li>
+            <li id="objeto">Object</li>
+            <li id="modelo">Model</li>
+        </ul>
+
+        <button id="pulsar">Pulsar para cambiar</button>
+
+    </main>
+
+    <!--  **********  Código JS  **********  -->
+    <script>
+
+        document.getElementById("pulsar").onclick = function () {
+            
+            // DOM
+            //Creamos un arreglo
+            var textos = new Array();
+            textos.push("Adrodita nació de la espuma del mar...");
+            textos.push("Una pelota de golf puede ser más letal que una bala...");
+            textos.push("Las abejas tienen emociones...");
+            textos.push("El arte es bueno para la salud...");
+            textos.push("Las rayas de la cebra auyentan a las mosca...");
+            textos.push("Las papas disminuyen la presión arterial...");
+            
+            //Creamos un número aleatorio
+            var num = Math.floor(Math.random() * textos.length);
+            
+            var li = document.createElement("li");
+            var texto = document.createTextNode(textos[num]);
+            li.appendChild(texto);
+            
+            //Por medio de este método, podemos reemplazar un nodo por otro:
+            //nodoPadre.replaceChild(nodoNuevo, nodoViejo);
+            //Puede ser un nodo que ya exista o uno nuevo.
+            var dom = document.getElementById("dom");
+            dom.replaceChild(li, dom.childNodes[0]);
+        }
+
+    </script>
+
+</body>
+
+</html>

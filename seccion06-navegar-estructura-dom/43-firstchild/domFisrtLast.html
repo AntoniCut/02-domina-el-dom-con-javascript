@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM | firstChild y lastChild</title>
+<style>
+.rojo{ color:red;}
+.verde{ color:green;}
+</style>
+</head>
+
+<body>
+<h1>Introducción al DOM</h1>
+<p>¿Qué es el DOM?</p>
+<ul><li>Document</li><li>Object</li><li>Model</li></ul>
+<script>
+//Las propiedades “firstChild” y “lastChild” 
+//regresan el primer y el último nodo de una “nodeList”.
+//Regresa un nodo ya sea elemento, texto o comentario.
+//Son propiedades de sólo lectura.
+
+//Seleccionamos a la etiqueta "ul" y todo su contenido
+var lista = document.querySelector("ul");
+
+//Seleccionamos al primer nodo hijo
+lista.firstChild.setAttribute("class", "verde");
+
+//Seleccionamos el último de los nodos hijos
+lista.lastChild.setAttribute("class", "rojo");
+</script>
+</body>
+</html>
