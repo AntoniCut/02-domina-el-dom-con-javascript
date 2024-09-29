@@ -1,5 +1,5 @@
 <!--  *********************************************************************************************************************  -->
-<!--  **********  /02-domina-el-dom-con-javascript/seccion01-introduccion-estudio-dom/01-introduccionindex.html  **********  -->
+<!--  **********  /02-domina-el-dom-con-javascript/seccion07-manejo-eventos-dom/47-internet-explorer/index.html  **********  -->
 <!--  *********************************************************************************************************************  -->
 
 
@@ -8,12 +8,12 @@
 
 <head>
     <meta charset="utf-8">
-    <title> Seccion 01 - Introduccion - Domina el DOM con JavaScript - Udemy - Francisco Javier Arce
-        Anguiano </title>
+    <title> Sección 07 - Manejo de Eventos del DOM - Domina el DOM con JavaScript -
+        Udemy - Francisco
+        Javier Arce Anguiano </title>
 
     <!--  **********  Favicon  **********  -->
     <link rel="icon" href="img/favicon-JS-2.ico">
-
 
     <!--  **********  Estilos  **********  -->
     <style>
@@ -41,26 +41,47 @@
             font-size: 24px;
         }
 
+        .botones-container {
+            display: flex;
+            gap: 100px;
+        }
+
+        .botones {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        button {
+            width: auto;
+            color: white;
+            background-color: blueviolet;
+            padding: 10px;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+
+        /*  **********  */
+
         #galeria {
             width: 100%;
-            height: 400px;
             border: 2px solid gray;
             padding: 20px;
-            box-sizing: border-box;
             display: flex;
             justify-content: space-around;
             align-items: center;
             flex-wrap: wrap;
+            gap: 20px;
         }
 
         img {
             cursor: pointer;
         }
+
+
+        /*  **********  */
     </style>
-
-
-    <!-- **********  Código JS Externo  **********   -->
-    <script src="js/fotos02.js"> </script>
 
 </head>
 
@@ -70,7 +91,7 @@
     <!--  **********  Header o Cabecera  **********  -->
     <header class="header">
 
-        <h1> Seccion 01 - Descargas e Instalaciones - Hola Mundo. </h1>
+        <h1> Sección 07 - El Manejo de los Eventos en Navegadores Viejos. </h1>
         <hr>
     </header>
 
@@ -88,6 +109,44 @@
         </div>
 
     </main>
+
+
+    <!--  **********  Código JS  **********  -->
+    <script>
+
+        window.onload = function () {
+
+            //  -----  Recuperamos las fotos con in galeria  -----
+            const fotos = document.querySelector("#galeria");
+
+            //  -----  3 Tipos de Eventos  -----
+            if (window.addEventListener) {
+
+                fotos.addEventListener("click", function (e) {
+                    if (e.target.tagName === "IMG") alert("addEventListener - Pulso una imagen");
+                    else alert("addEventListener - NO pulso una imagen");
+                }, false);
+
+            } else if (window.attachEvent) {
+
+                fotos.attachEvent("onclick", function (e) {
+                    if (e.target.tagName === "IMG") alert("attachEvent - Pulso una imagen");
+                    else alert(attatchEvent - "NO pulso una imagen");
+                })
+
+            } else {
+
+                fotos.onclick = function (e) {
+
+                    if (e.target.tagName === "IMG") alert("onclick - Pulso una imagen");
+                    else alert("onclick - NO pulso una imagen");
+                };
+            }
+
+        }
+
+
+    </script>
 
 </body>
 

@@ -1,0 +1,149 @@
+<!--  **********************************************************************************************************************  -->
+<!--  **********  /02-domina-el-dom-con-javascript/seccion07-manejo-eventos-dom/49-modelo-propagacion/index.html  **********  -->
+<!--  **********************************************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> Sección 07 - Manejo de Eventos del DOM - Domina el DOM con JavaScript -
+        Udemy - Francisco
+        Javier Arce Anguiano </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="img/favicon-JS-2.ico">
+
+    <!--  **********  Estilos  **********  -->
+    <style>
+        .header {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid green;
+        }
+
+        .main {
+            width: 650px;
+            margin: 30px auto;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 20px;
+            gap: 10px;
+            font-size: 24px;
+        }
+
+        .botones-container {
+            display: flex;
+            gap: 100px;
+        }
+
+        .botones {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        button {
+            width: auto;
+            color: white;
+            background-color: blueviolet;
+            padding: 10px;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+
+        /*  **********  */
+
+        #galeria {
+            width: 100%;
+            border: 2px solid gray;
+            padding: 20px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        img {
+            cursor: pointer;
+        }
+
+
+        /*  **********  */
+    </style>
+
+</head>
+
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Sección 07 - El Modelo de Propagación de Eventos. </h1>
+        <hr>
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+        <h1> Edificios antiguos griegos </h1>
+        <div id="galeria">
+            <img id="foto1" src="imagenes/fondos/minis/fondo1.jpg" width="200" height="150">
+            <img src="imagenes/fondos/minis/fondo2.jpg" width="200" height="150">
+            <img src="imagenes/fondos/minis/fondo3.jpg" width="200" height="150">
+            <img src="imagenes/fondos/minis/fondo4.jpg" width="200" height="150">
+            <img src="imagenes/fondos/minis/fondo5.jpg" width="200" height="150">
+            <img src="imagenes/fondos/minis/fondo6.jpg" width="200" height="150">
+        </div>
+
+    </main>
+
+
+    <!--  **********  Código JS  **********  -->
+    <script>
+
+        window.onload = function () {
+
+            //  -----  Recuperamos las fotos con in galeria  -----
+            const fotos = document.querySelector("#galeria");
+
+            //  -----  Si addEventListener = true  --  el Evento se Propaga del Padre al Hijo  -----
+            //  -----  Si addEventListener = false  --  el Evento se Propaga del Hijo al Padre  -----
+
+            fotos.addEventListener("click", function (e) {
+                if (e.target.tagName === "IMG") {
+                    alert("addEventListener - Pulso una imagen");
+                    console.log("e - desde galeria: ", e);
+                }
+                else {
+                    alert("addEventListener - NO pulso una imagen");
+                    console.log("e - desde galeria: ", e);
+                }
+                console.log("\n");
+            }, false);
+
+
+            document.getElementById("foto1").addEventListener("click", function (e) {
+                console.log("e - desde una imagen", e);
+            }, false);
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>

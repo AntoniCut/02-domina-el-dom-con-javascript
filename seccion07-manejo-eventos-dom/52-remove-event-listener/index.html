@@ -1,0 +1,188 @@
+<!--  *******************************************************************************************************************  -->
+<!--  **********  /02-domina-el-dom-con-javascript/seccion07-manejo-eventos-dom/51-prevent-default/index.html  **********  -->
+<!--  *******************************************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> Sección 07 - Manejo de Eventos del DOM - Domina el DOM con JavaScript -
+        Udemy - Francisco
+        Javier Arce Anguiano </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="img/favicon-JS-2.ico">
+
+    <!--  **********  Estilos  **********  -->
+    <style>
+        .header {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid green;
+        }
+
+        .main {
+            width: 100%;
+            margin: 30px auto;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 20px;
+            gap: 10px;
+            font-size: 24px;
+        }
+
+        .botones-container {
+            display: flex;
+            gap: 100px;
+        }
+
+        .botones {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        button {
+            width: auto;
+            color: white;
+            background-color: blueviolet;
+            padding: 10px;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+
+        /*  **********  */
+        .ejemplos {
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #div1,
+        #div2 {
+            background-color: blue;
+            border: 1px solid;
+            padding: 50px;
+            color: white;
+            width: 400px;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Sección 07 - Detener el Comportamiento por Omisión de un Evento con preventDefault(). </h1>
+        <hr>
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+
+        <div class="ejemplos">
+
+            <div id="div1">
+                <p>Mueve el apuntador del ratón para ver las coordenadas.</p>
+                <p><button id="pulsar1">Detener el evento</button></p>
+                <p><button id="pulsar1Act"> Activar el evento</button></p>
+            </div>
+
+            <p><strong>Nota:</strong>IE8- no soporta a los eventos addEventListener() y removeEventListener().</p>
+
+            <p id="salida1"> </p>
+
+        </div>
+
+        <div class="ejemplos">
+
+            <div id="div2">
+                <p>Mueve el apuntador del ratón para ver las coordenadas.</p>
+                <p><button id="pulsar2">Detener el evento</button></p>
+                <p><button id="pulsar2Act"> Activar el evento</button></p>
+            </div>
+
+            <p><strong>Nota:</strong>IE8- no soporta a los eventos addEventListener() y removeEventListener().</p>
+
+            <p id="salida2"> </p>
+
+        </div>
+
+
+    </main>
+
+
+    <!--  **********  Código JS  **********  -->
+    <script>
+
+        //  -----  div1  -----
+        document.querySelector("#div1").addEventListener("mousemove", coordenadas);
+
+        function coordenadas(e) {
+            document.getElementById("salida1").innerHTML = "x: " + e.clientX + "- y:" + e.clientY;
+        }
+
+        //  -----  detener evento  -----
+        document.getElementById("pulsar1").addEventListener("click", function () {
+            document.querySelector("#div1").removeEventListener("mousemove", coordenadas);
+        }, false);
+
+        //  -----  activar evento  -----
+        document.getElementById("pulsar1Act").addEventListener("click", function () {
+            document.querySelector("#div1").addEventListener("mousemove", coordenadas);
+        }, false);
+
+
+        //  -----  div2  -----
+        const div2 = document.querySelector('#div2');
+        const boton2 = document.querySelector('#pulsar2');
+        const boton2Act = document.querySelector('#pulsar2Act');
+        const salida2 = document.querySelector('#salida2');
+
+        function mostrarCoordenadas(e) {
+            salida2.innerHTML = `X: ${e.clientX} - y: ${e.clientY}`;
+        }
+
+        //  -----  mover el cursor por dentro del div  -----
+        div2.addEventListener('mousemove', mostrarCoordenadas);
+
+        //  -----  pulsar botón eliminar evento  -----
+        pulsar2.addEventListener('click', (e) => {
+
+            //  -----  eliminamos el evento  -----
+            div2.removeEventListener('mousemove', mostrarCoordenadas);
+        });
+
+        //  -----  pulsar boton añadir evento  -----
+        pulsar2Act.addEventListener('click', () => {
+
+            //  -----  volvemos a añadir el evento  -----
+            div2.addEventListener('mousemove', mostrarCoordenadas);
+
+        });
+
+
+
+
+    </script>
+
+</body>
+
+</html>
