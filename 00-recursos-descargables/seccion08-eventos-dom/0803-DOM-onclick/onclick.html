@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM | onclick</title>
+<script>
+//Manejo de eventos
+var atenea;
+window.onload = function(){
+	//Seleccionamos el elemento
+	atenea = document.getElementById("atenea");
+	//Asignamos el evento
+	atenea.onclick = function(){
+		alert("Atenea, diosa de la sabiduria");
+	}
+}
+</script>
+<style>
+	#atenea{ cursor:pointer; }
+</style>
+</head>
+
+<body>
+<!--<img src="imagen/atenea.jpg" width="220" height="238" onClick="alert('La Diosa Atenea');"/>-->
+<img id="atenea" src="../imagenes/atenea.jpg" width="220" height="238" />
+</body>
+</html>

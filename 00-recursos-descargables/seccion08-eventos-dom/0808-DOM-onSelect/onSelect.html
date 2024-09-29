@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<title>DOM | onSelect</title>
+<script>
+// El "select" solo es para texto (cajas, párrafos, titulos, etc.)
+var cajas;
+var miBody;
+window.onload = function(){
+    //Creamos un arreglo con todas las cajas de input
+	cajas = document.getElementsByTagName("input");
+    
+    //Detectamos cuando se selecciona el texto
+	cajas[0].onselect = function(){
+        //Seleccionamos el body
+		miBody = document.getElementsByTagName("body");
+        //Cambiamos el atributo
+		miBody[0].setAttribute("class","rojo");
+	}
+    
+	cajas[1].onselect = function(){
+		miBody = document.getElementsByTagName("body");
+		miBody[0].setAttribute("class","verde");
+	}
+    
+	cajas[2].onselect = function(){
+		miBody = document.getElementsByTagName("body");
+		miBody[0].setAttribute("class","amarillo");
+	}
+    
+	cajas[3].onselect = function(){
+		miBody = document.getElementsByTagName("body");
+		miBody[0].setAttribute("class","azul");
+	}
+}
+</script>
+<style>
+.rojo{ background-color:#F00;}
+.amarillo{ background-color:#FF0;}
+.verde{ background-color:#0F0;}
+.azul{ background-color:#00F;}
+</style>
+</head>
+
+<body>
+<p>Selecciona el texto de alguna de las cajas, por medio de botón sostenido, para cambiar el color del fondo</p>
+<form id="forma" name="forma" method="post" action="">
+  <p><input type="text" name="rojo" id="rojo" value="rojo"/></p>
+  <p><input type="text" name="verde" id="verde" value="verde"/></p>
+  <p><input type="text" name="amarillo" id="amarillo" value="amarillo"/></p>
+  <p><input type="text" name="azul" id="azul" value="azul"/></p>
+</form>
+</body>
+</html>

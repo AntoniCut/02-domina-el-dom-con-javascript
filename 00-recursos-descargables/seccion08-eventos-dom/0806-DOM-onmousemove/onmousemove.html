@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM | onMouseMove</title>
+<script>
+//Manejo de eventos
+var w = 220;
+var h = 238;
+window.onload = function(){
+	//Se presiona el botón izquierdo
+	document.body.onmousemove = function(e){
+		if(e.clientX<600){
+			w+=.5;
+			h+=.5;
+		} else {
+			w-=.5;
+			h-=.5;
+		}
+		document.getElementById("atenea").style.width = w+"px";
+		document.getElementById("atenea").style.height = h+"px";
+	}
+}
+
+</script>
+<style>
+</style>
+</head>
+
+<body>
+<img id="atenea" src="../imagenes/atenea.jpg" width="220" height="238" />
+</body>
+</html>
