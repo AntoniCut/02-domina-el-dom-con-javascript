@@ -1,0 +1,409 @@
+<!--  ****************************************************************************************************  -->
+<!--  **********  /02-domina-el-dom-con-javascript/seccion08-eventos-dom/53-eventos/index.html  **********  -->
+<!--  ****************************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> Sección 08 - Los Eventos del DOM - Domina el DOM con JavaScript -
+        Udemy - Francisco
+        Javier Arce Anguiano </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="img/favicon-JS-2.ico">
+
+    <!--  **********  Estilos  **********  -->
+    <style>
+        .header {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid green;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 20px;
+            gap: 50px;
+            font-size: 16px;
+        }
+
+        .botones-container {
+            display: flex;
+            gap: 100px;
+        }
+
+        .botones {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        button,
+        #enviar,
+        #reset {
+            width: auto;
+            color: white;
+            background-color: blueviolet;
+            padding: 10px;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        span {
+            background-color: aquamarine;
+            color: black;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        img {
+            margin-left: 6px;
+            margin-right: 6px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        /*  **********  */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ejemplos {
+            max-width: 300px;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            background-color: antiquewhite;
+        }
+
+        .rojo {
+            background-color: red;
+        }
+
+        .verde {
+            background-color: green;
+        }
+
+
+        .amarillo {
+            background-color: #FF0;
+        }
+
+        .azul {
+            background-color: #00F;
+        }
+
+        .enciende {
+            background-color: #FF9;
+        }
+
+        .apaga {
+            background-color: #FFF;
+        }
+
+        .error {
+            background-color: #F00;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Sección 08 - Eventos del DOM. </h1>
+        <hr>
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+        <!--  -----  onload  -----  -->
+        <section class="ejemplos">
+            <h2> onload </h2>
+            <span> </span>
+        </section>
+
+        <!--  -----  onclick  -----  -->
+        <section class="ejemplos">
+
+            <h3> onclick </h3>
+            <img id="imagen1" src="imagenes/fondos/fondo1.jpg" width="220" height="238" />
+
+        </section>
+
+
+        <!--  -----  onmouseover y onmouseout  -----  -->
+        <section class="ejemplos">
+
+            <h3> onmouseover - onmouseout </h3>
+            <img id="imagen2" src="imagenes/fondos/fondo1.jpg" width="220" height="238" />
+
+        </section>
+
+
+        <!--  -----  onmousedown y onmouseup  -----  -->
+        <section class="ejemplos">
+
+            <h3> onmousedown - onmouseup </h3>
+            <img id="imagen3" src="imagenes/fondos/fondo1.jpg" width="220" height="238" />
+
+        </section>
+
+
+        <!--  -----  onmousemove  -----  -->
+        <section class="ejemplos">
+
+            <h3> onmousemove </h3>
+            <img id="imagen4" src="imagenes/fondos/fondo1.jpg" width="220" height="238" />
+
+        </section>
+
+
+        <!--  -----  eventos de teclado  -----  -->
+        <section class="ejemplos">
+
+            <h3> Eventos de Teclado </h3>
+            <p>Escribe sobre la caja de entrada en letras minúsculas y JavaScript las pasará a Mayúsculas</p>
+            <form>
+                <label for="caja">Escribe aqui: </label>
+                <input name="caja" type="text" id="caja" size="60" />
+            </form>
+
+        </section>
+
+        <!--  -----  evento select  -----  -->
+        <section class="ejemplos">
+
+            <h3> Evento Select </h3>
+            <p>Selecciona el texto de alguna de las cajas, por medio de botón sostenido, para cambiar el color del fondo
+            </p>
+            <form id="forma" name="forma" method="post" action="valida.php">
+                <p><input type="text" name="rojo" id="rojo" value="rojo" /></p>
+                <p><input type="text" name="verde" id="verde" value="verde" /></p>
+                <p><input type="text" name="amarillo" id="amarillo" value="amarillo" /></p>
+                <p><input type="text" name="azul" id="azul" value="azul" /></p>
+            </form>
+
+        </section>
+
+
+        <!--  -----  eventos onfocus y onblur  -----  -->
+        <section class="ejemplos">
+
+            <h3> Evento onblur y onfocus </h3>
+            <form>
+                <p>
+                    <label for="campo1">Campo1</label>
+                    <input type="text" name="campo1" id="campo1" />
+                </p>
+                <p>
+                    <label for="campo2">Campo2</label>
+                    <input type="text" name="campo2" id="campo2" />
+                </p>
+            </form>
+
+        </section>
+
+
+        <!--  -----  eventos onsubmit y onreset  -----  -->
+        <section class="ejemplos">
+
+            <h3> Eventos onsubmit y onreset </h3>
+            <form id="forma2" name="forma" method="post" action="valida.php">
+                <p>
+                    <label for="clave1">Clave 1</label>
+                    <input type="password" name="clave1" id="clave1" />
+                </p>
+                <p>
+                    <label for="clave2">Clave 2:</label>
+                    <input type="password" name="clave2" id="clave2" />
+                </p>
+                <p>
+                    <input type="submit" name="enviar" id="enviar" value="Enviar" />
+                    <input type="reset" name="reset" id="reset" value="Reset" />
+                </p>
+            </form>
+
+        </section>
+
+
+
+    </main>
+
+    <!--  **********  Código JS  **********  -->
+    <script>
+
+        //  -----  Evento onload  -----
+        window.onload = function () {
+
+            const resultado = document.querySelector('span');
+            resultado.innerHTML = 'Hola desde JavaScript DOM <br> Página Cargada!!!';
+            //alert("Hola desde JavaScript DOM - Página Cargada!!!");
+            eventos();
+        }
+
+        //  -----  Evento onunload  --  Desactualizado - No Funciona  -----
+        window.onunload = function () {
+            alert("Adios, es el fin... del onunload!!!");
+        }
+
+
+        function eventos() {
+
+            alert('eventos');
+
+            //  -----  onclick  -----
+            const imagen1 = document.getElementById("imagen1");
+            imagen1.onclick = function () {
+                alert("click en Imagen");
+            }
+
+
+            //  -----  onmouseover - onmouseout  -----
+            const imagen2 = document.getElementById("imagen2");
+            imagen2.onmouseover = function () {
+                document.body.setAttribute('class', 'rojo');
+            }
+            imagen2.onmouseout = function () {
+                document.body.setAttribute('class', 'verde');
+            }
+
+
+            //  -----  onmouseover - onmouseout  -----
+            const imagen3 = document.getElementById("imagen3");
+            imagen3.onmousedown = function () {
+                document.body.setAttribute('class', 'rojo');
+            }
+            imagen3.onmouseup = function () {
+                document.body.setAttribute('class', 'verde');
+            }
+
+
+            //  -----  onmouseover  -----
+            let w = 220;
+            let h = 238;
+
+            //  ----- Evento onmousemove en todo el body -----
+            document.body.onmousemove = function (e) {
+
+                // Redimensionar la imagen dependiendo de la posición del ratón
+                if (e.clientX < window.innerWidth / 2) {
+                    w += 0.5; // Aumentar tamaño
+                    h += 0.5;
+                } else {
+                    w -= 0.5; // Reducir tamaño
+                    h -= 0.5;
+                }
+
+                // Aplicar límites al tamaño
+                if (w < 100) w = 100; // tamaño mínimo
+                if (h < 100) h = 100;
+                if (w > 400) w = 400; // tamaño máximo
+                if (h > 400) h = 400;
+
+                // Cambiar el tamaño de la imagen
+                //document.getElementById("imagen4").style.width = w + "px";
+                //document.getElementById("imagen4").style.height = h + "px";
+            }
+
+
+            //  -----  Eventos de Teclado  -----
+
+            //  -----  Enento onselect  -----
+            //  -----  Evento onselect  -----
+            const rojo = document.getElementById("rojo");
+            const verde = document.getElementById("verde");
+            const amarillo = document.getElementById("amarillo");
+            const azul = document.getElementById("azul");
+
+            // Asignar el evento onselect a cada input
+            rojo.onselect = function () {
+                document.body.setAttribute('class', 'rojo');
+            }
+
+            verde.onselect = function () {
+                document.body.setAttribute('class', 'verde');
+            }
+
+            amarillo.onselect = function () {
+                document.body.setAttribute('class', 'amarillo');
+            }
+
+            azul.onselect = function () {
+                document.body.setAttribute('class', 'azul');
+            }
+
+
+            //  -----  Eventos onfocus y onblur  -----
+            campo1 = document.getElementById("campo1");
+            campo2 = document.getElementById("campo2");
+
+            campo1.onfocus = function () {
+                this.setAttribute('class', 'enciende');
+            }
+
+            campo1.onblur = function () {
+                this.setAttribute('class', 'apaga');
+            }
+
+            campo2.onfocus = function () {
+                this.setAttribute('class', 'enciende');
+            }
+
+            campo2.onblur = function () {
+                this.setAttribute('class', 'apaga');
+            }
+
+
+            //  -----  Eventos onsubmit y onreset  -----
+            const forma2 = document.getElementById("forma2");
+            const clave1 = document.getElementById("clave1");
+            const clave2 = document.getElementById("clave2");
+
+            forma2.onsubmit = function () {
+
+                //  -----  Recuperamos los dos valores de cada caja  -----
+                const valor1 = clave1.value;
+                const valor2 = clave2.value;
+
+                //  -----Verificamos que no esten vacio los campos  --  || OR && AND
+
+                if (valor1 === "" || valor2 === "") alert("Claves erróneas");
+                else if (valor1 !== valor2) alert("Claves no coinciden");
+                else {
+                    alert("Claves correctas, enviando la información");
+                    return true;
+                }
+                return false;
+            }
+
+
+            forma2.onreset = function (event) {
+                alert("El formulario se ha restablecido.");
+             
+            };
+
+        }
+
+    </script>
+
+</body>
+
+</html>
