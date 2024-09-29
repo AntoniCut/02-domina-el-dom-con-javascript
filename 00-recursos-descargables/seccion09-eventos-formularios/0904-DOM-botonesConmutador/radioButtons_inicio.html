@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>DOM | radioButtons</title>
+<meta charset="utf-8">
+<style> 
+body{
+  background-color:gray;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+div{
+  width:150px;
+  height:180px;
+  background-color:white;
+  border: solid black 1px;
+}
+#mensaje {
+  box-sizing: border-box;
+  padding: 12px;
+  width: 400px;
+  background-color: coral;
+  color: white;
+  margin:0 auto;
+  text-align: center;
+  display: none;
+  font-size:22px;
+}
+.cerrar {
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.cerrar:hover {
+  color: #000;
+}
+</style>
+<script>
+
+</script>
+</head>
+<body>
+<div id="botones">
+<p>Estado civil:</p>
+  <input type="radio" name="estado" value="1" checked> Soltero<br>
+  <input type="radio" name="estado" value="2"> Casado<br>
+  <input type="radio" name="estado" value="3"> Divorciado<br>
+  <input type="radio" name="estado" value="4"> Viudo<br>
+  <input type="radio" name="estado" value="5"> Es complicado<br>
+</body>
+</div>
+<div id="mensaje">
+  <span id="tache" class="cerrar">&times;</span>
+  <p id="enunciado">&nbsp;</p>
+</div>
+</html>
