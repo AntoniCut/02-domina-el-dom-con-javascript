@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Galería responsiva</title>
+	<meta charset="utf-8">
+	<style>
+		*{ box-sizing: border-box; }
+		body{margin:0;}
+		.columna{
+			float:left;
+			width:25%;
+			padding: 10px;
+		}
+		.columna img{
+			opacity: .7;
+			cursor: pointer;
+		}
+		.columna img:hover{
+			opacity: 1;
+		}
+		h2{ text-align: center; }
+		.renglon:after{
+			content:"";
+			display:table;
+			clear:both;
+		}
+		.contenido{
+			position:relative;
+			display:none;
+		}
+		#texto{
+			position: absolute;
+			top: 15px;
+			left: 15px;
+			color: orange;
+			font-size:30px;
+		}
+		.cerrar{
+			position: absolute;
+			top: 10px;
+			right: 15px;
+			color: orange;
+			font-size: 35px;
+			cursor: pointer;
+		}
+	</style>
+	<script>
+		function despliega(img){
+			var imagen = document.getElementById("imagen");
+			var texto = document.getElementById("texto");
+			imagen.src = img.src;
+			texto.innerHTML = img.alt;
+			imagen.parentElement.style.display = "block";
+		}
+	</script>
+</head>
+<body>
+	<h2>Galería responsiva</h2>
+
+	<div class="renglon">
+		<div class="columna">
+			<img src="imagenes/afrodita.jpeg" alt="La Venus del espejo" width="100%" onclick="despliega(this)">
+		</div>
+		<div class="columna">
+			<img src="imagenes/afrodita2.jpeg" alt="El nacimiento de Venus" width="100%" onclick="despliega(this)">
+		</div>
+		<div class="columna">
+			<img src="imagenes/hercules.jpeg" alt="Hércules" width="100%" onclick="despliega(this)">
+		</div>
+		<div class="columna">
+			<img src="imagenes/medusa.jpeg" alt="La cabeza de Medusa" width="100%" onclick="despliega(this)">
+		</div>
+	</div>
+	<div class="contenido">
+		<span onclick="this.parentElement.style.display='none'" class="cerrar">&times;</span>
+		<img id="imagen" width="100%">
+		<div id="texto"> </div>
+	</div>
+
+</body>
+</html>

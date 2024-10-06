@@ -1,0 +1,125 @@
+/*  ************************************************************************************  */
+/*  **********  /02-domina-el-dom-con-javascript/seccion10-ejemplos-usos-dom  **********  */
+/*  **********  /59-galeria-responsiva/css/styles.css  *********************************  */
+/*  ************************************************************************************   */
+
+
+/*  *****  Estilos Generales  *****  */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(to bottom, #aaa, #eee, #aaa);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 10px solid #333333;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/*  *****  Estilos del Proyecto  *****  */
+
+.renglon {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.columna {
+    width: 100%;
+    max-width: 25%;
+    /* Limita el ancho máximo a un 25% */
+    flex-basis: calc(25% - 20px);
+    /* Calcula el tamaño de la columna con espacio entre imágenes */
+    padding: 10px;
+}
+
+/* Hacemos que las imágenes se ajusten al tamaño de su contenedor */
+.columna img {
+    width: 100%;
+    height: auto;
+    opacity: .7;
+    cursor: pointer;
+}
+
+.columna img:hover {
+    opacity: 1;
+}
+
+/*  *****  Estilos de la Imagen Ampliada  *****  */
+.contenido {
+    position: relative;
+    display: none;
+    width: 50%;
+}
+
+#texto {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    color: orange;
+    font-size: 30px;
+}
+
+.cerrar {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: orange;
+    font-size: 35px;
+    cursor: pointer;
+}
+
+
+/*  *****  Media Queries para hacer la galería responsiva  *****  */
+
+@media (max-width: 1024px) {
+    .columna {
+        max-width: 33%;
+        /* Ocupan un tercio de la fila */
+        flex-basis: calc(33% - 20px);
+    }
+}
+
+@media (max-width: 768px) {
+    .columna {
+        max-width: 50%;
+        /* En tablets, ocupan la mitad de la fila */
+        flex-basis: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 480px) {
+    .columna {
+        max-width: 100%;
+        /* En móviles, ocupan el 100% de la fila */
+        flex-basis: 100%;
+    }
+}

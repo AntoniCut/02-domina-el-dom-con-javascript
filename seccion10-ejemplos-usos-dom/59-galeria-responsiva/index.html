@@ -1,0 +1,71 @@
+<!--  ************************************************************************************  -->
+<!--  **********  /02-domina-el-dom-con-javascript/seccion10-ejemplos-usos-dom  **********  -->
+<!--  **********  /59-galeria-responsiva/index.html  *************************************  -->
+<!--  ************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Galeria Responsiva - Sección 10 - Ejemplos del Uso del DOM - Domina el DOM con JavaScript -
+        Udemy - Francisco Javier Arce Anguiano </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="img/favicon-JS-2.ico">
+
+    <!--  **********  Estilos  **********  -->
+    <link rel="stylesheet" href="css/styles.css">
+
+
+
+</head>
+
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Galeria Responsiva - Sección 10 - Ejemplos del Uso del DOM. </h1>
+        <hr>
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+        <div class="renglon">
+            <div class="columna">
+                <img src="imagenes/afrodita.jpeg" alt="La Venus del espejo" width="100%" height="350px">
+            </div>
+            <div class="columna">
+                <img src="imagenes/afrodita2.jpeg" alt="El nacimiento de Venus" width="100%" height="350px">
+            </div>
+            <div class="columna">
+                <img src="imagenes/hercules2.jpeg" alt="Hércules" width="100%" height="350px">
+            </div>
+            <div class="columna">
+                <img src="imagenes/medusa.jpeg" alt="La cabeza de Medusa" width="100%" height="350px">
+            </div>
+        </div>
+
+        <div class="contenido">
+            <!-- <span onclick="this.parentElement.style.display='none'" class="cerrar">&times;</span> -->
+            <span class="cerrar">&times;</span>
+            <img id="imagen" width="100%">
+            <div id="texto"> </div>
+        </div>
+
+
+    </main>
+
+
+    <!--  **********  Código JS  **********  -->
+    <script src="js/galeria-responsiva.js"> </script>
+
+
+</body>
+
+</html>
