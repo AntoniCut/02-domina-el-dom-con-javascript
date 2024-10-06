@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOMSetAttribute</title>
+<style>
+.rojo{
+	color: red;
+}
+.verde{
+	color: green;
+}
+</style>
+</head>
+
+<body>
+<h1>get y set Attributes</h1>
+<p>¿Qué es el DOM?</p>
+<ul id="dom" class="verde">
+  <li>Document</li>
+  <li>Object</li>
+  <li>Model</li>
+</ul>
+<button id="pulsar">Cambiar el color</button>
+<script>
+document.getElementById("pulsar").onclick = function(){
+	//Creamos todo el elemento de las UL
+	var miDOM = document.getElementById("dom");
+	//
+	var clase = miDOM.getAttribute("class");
+	alert("La clase de la lista era: "+clase);
+	if(clase=="verde"){
+		//Con el método setAttribute asignamos una clase a un nodo
+		miDOM.setAttribute("class","rojo");
+	} else {
+		miDOM.setAttribute("class","verde");
+	}
+}
+</script>
+</body>
+</html>

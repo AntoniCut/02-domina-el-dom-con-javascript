@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>DOM | propiedades</title>
+<script>
+//Uso del evento onSubmit para verificar una forma
+window.onload = function(){
+  //Instancias
+  document.getElementById("boletin").onchange = function(){
+    console.log("valor: "+this.value+"\nForma: "+this.form+"\nNombre: "+this.name+"\n Tipo: "+this.type, this.checked);
+    if(this.checked){
+      this.form.correo.disabled = false;
+    } else {
+      this.form.correo.disabled = true;
+      this.form.correo.value = "";
+    }
+  }
+}
+</script>
+</head>
+
+<body>
+<form id="forma" name="forma" method="post" action="valida.php">
+  <p>
+    <label for="boletin">¿Quieres recibir nuestro boletín?</label>
+    <input type="checkbox" name="boletin" id="boletin" />
+  </p>
+  <p>
+    <label for="correo">Correo electrónico:</label>
+    <input type="text" name="correo" id="correo" disabled="true" />
+  </p>
+</form>
+</body>
+</html>

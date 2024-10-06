@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>DOM | onreset</title>
+<script>
+//Uso del evento onSubmit para verificar una forma
+var forma, clave1, clave2;
+window.onload = function(){
+  //Instancias
+  forma = document.getElementById("forma");
+  clave1 = document.getElementById("clave1");
+  clave2 = document.getElementById("clave2");
+  //Listeners para detectar el envio de la forma
+  forma.onsubmit = function(){
+    //Recuperamos los dos valores de cada caja
+    var valor1 = clave1.value;
+    var valor2 = clave2.value;
+    //Verificamos que no esten vacio los campos
+    //|| OR && AND
+    if(valor1=="" || valor2==""){
+      alert("Claves erróneas"); 
+    } else if(valor1 != valor2){
+      alert("Claves no coinciden");
+    } else {
+      alert("Claves correctas, enviando la información");
+      return true;
+    }
+    return false;
+  }
+  forma.onreset = function(){
+    return confirm("¿Desea limpiar los datos?\nSe perderá la información.");
+  }
+}
+</script>
+</head>
+
+<body>
+<form id="forma" name="forma" method="post" action="valida.php">
+  <p>
+    <label for="clave1">Clave 1:</label>
+    <input type="password" name="clave1" id="clave1" />
+  </p>
+  <p>
+    <label for="clave2">Clave 2:</label>
+    <input type="password" name="clave2" id="clave2" />
+  </p>
+  <p>
+    <input type="submit" name="enviar" id="enviar" value="Enviar" />
+    <input type="reset" name="limpiar" id="limpiar" value="Limpiar" />
+  </p>
+</form>
+</body>
+</html>

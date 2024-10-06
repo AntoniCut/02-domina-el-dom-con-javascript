@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM | insertBefore</title>
+<script src="javaScript/dom.js"></script>
+<style>
+.rojo{
+	color: red;	
+}
+</style>
+</head>
+
+<body>
+<h1>Introducción al DOM</h1>
+<p>¿Qué es el DOM?</p>
+<ul id="dom">
+  <li>Document</li>
+  <li>Object</li>
+  <li>Model</li>
+</ul>
+<button id="pulsar">Añadir una frase</button>
+<script>
+document.getElementById("pulsar").onclick = function(){
+	// DOM
+	//Creamos un arreglo
+	var textos = new Array();
+	textos.push("Adrodita nació de la espuma del mar...");
+	textos.push("Una pelota de golf puede ser más letal que una bala...");
+	textos.push("Las abejas tienen emociones...");
+	textos.push("El arte es bueno para la salud...");
+	textos.push("Las rayas de la cebra auyentan a las mosca...");
+	textos.push("Las papas disminuyen la presión arterial...");
+	//Creamos un número aleatorio
+	var num = Math.floor(Math.random()*textos.length);
+	
+	//1) Creamos los objetos vacios por medio de createElement()
+	//Se crean vacias y de momento no se visualizan
+	var li = document.createElement("li");
+	
+	//2) Llenamos con contenido a los objetos
+	//Que estaban vacias (poblar o populate)
+	li.innerHTML = textos[num];
+	
+	//3) Los añadimos al documento DOM por medio de appendChild
+	//lo añadimos a la etiqueta con identificador "sabias"
+	var dom = document.getElementById("dom");
+	dom.insertBefore(li,dom.childNodes[4]);	
+}
+</script>
+</body>
+</html>

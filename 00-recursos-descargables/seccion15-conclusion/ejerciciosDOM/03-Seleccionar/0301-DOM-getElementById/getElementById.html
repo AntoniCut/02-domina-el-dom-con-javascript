@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Introducción al DOM | getElementById()</title>
+</head>
+
+<body>
+<h1>Introducción al DOM</h1>
+<p>¿Qué es el DOM?</p>
+<ul id="dom">
+<li>Document</li>
+<li>Object</li>
+<li>Model</li>
+</ul>
+<script>
+// DOM
+//Recuperamos un nodo con el identificador o "id" específico
+//childNodes: numero de etiquetas directas a partir del nodo
+//nodeList
+var miDOM = document.getElementById("dom");
+document.write("El numero de nodos de lista son: "+miDOM.childNodes.length+"<br>");
+console.log(miDOM.childNodes);
+</script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>DOM | onMouseOver</title>
+<script>
+//Manejo de eventos
+window.onload = function(){
+	var atenea = document.getElementById("atenea");
+	
+    //Detecta cuando el apuntador del ratón pasa
+    //sobre la imagen (siempre van en minusculas)
+	atenea.onmouseover = function(){
+		document.body.setAttribute("class","rojo");
+	}
+
+    //Detecta cuando el apuntador del ratón sale
+    //de la imagen
+	atenea.onmouseout = function(){
+		document.body.setAttribute("class","verde");
+	}
+}
+</script>
+<style>
+.rojo{ background-color:red;}
+.verde{ background-color:green;}
+</style>
+</head>
+
+<body>
+<img id="atenea" src="../imagenes/atenea.jpg" width="220" height="238" />
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Cajas de entrada</title>
+<meta charset="utf-8">
+<style> 
+body {margin:0 auto; font-family: sans-serif; width:400px;}
+.forma {background-color: orange; color: white; border: solid 2px white; margin-left:20px; width: 330px; padding:10px; }
+.forma label {display: block; width: 120px; float: left; text-align:right; margin-bottom: 35px; padding-right: 20px;}
+br {clear: left;} 
+input[type="submit"]{margin:25px 5px 10px 5px;}
+</style>
+<script>
+window.onload = function () {
+  //Elementos input
+  var entradas = document.getElementsByTagName('input'); 
+  for (var i=0; i< entradas.length; i++) {
+    if (entradas[i].type == 'text') {
+      entradas[i].onblur = fondoBlanco;
+      entradas[i].onfocus = fondoAmarillo;
+    }
+  }
+  entradas[0].focus();
+}
+ 
+function fondoBlanco() {this.style.backgroundColor = 'white';}
+function fondoAmarillo(){this.style.backgroundColor = 'yellow';}
+</script>
+</head>
+<body>
+<div class="forma">
+ <form name ="contacto" method="get" action="#">
+  <label>Nombre:</label><input id="nombre" name="nombre" type="text"/><br/>
+  <label>Apellidos:</label><input id="apellidos" name="apellidos" type="text"/><br/>
+  <label>Dirección:</label><input id="direccion" name="direccion" type="text"/><br/>
+   <label>Estado Civil:</label>
+  <input type="radio" name="estado" id="soltero" value="soltero"/>Soltero
+  <input type="radio" name="estado" id ="casado" value="casado"/>Casado<br/>
+  <label>Idoma:</label>
+  <select id="idioma" name="Idioma">
+      <option value="">Elija un idioma</option>
+      <option value="espanol">Español</option>
+      <option value="ingles">Inglés</option>
+      <option value="frances">Francés</option>
+  </select><br/>
+  <label>Preferencias</label>
+  <input name="cantar" type="checkbox" />Cantar
+  <input name="bailar" type="checkbox"  />Bailar
+  <input type="submit" value="Enviar"/> 
+ </form>
+ </div>
+</body>
+</html>

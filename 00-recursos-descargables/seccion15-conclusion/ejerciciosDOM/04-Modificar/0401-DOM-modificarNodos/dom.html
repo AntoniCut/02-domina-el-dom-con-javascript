@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Propiedades de los nodos</title>
+<script>
+window.onload = function(){
+	// DOM
+	//Genera un arreglo o nodelist
+	var misLI = document.getElementsByTagName("li");
+	console.log("El número de elementos de lista son: "+misLI.length);
+	//Creamos todo el elemento de las UL
+	var miDOM = document.getElementById("dom");
+	console.log("El número de nodos de lista son: "+miDOM.childNodes.length);
+	for(var i=0; i<miDOM.childNodes.length; i++){
+		x = miDOM.childNodes[i].nodeValue;
+		console.log("---------------------");
+		console.log("El tipo de nodo es  : "+miDOM.childNodes[i].nodeType);
+		console.log("El nombre de nodo es: "+miDOM.childNodes[i].nodeName);
+		console.log("El valor de nodo es : "+x);
+		console.log("Los att. de nodo es : "+miDOM.childNodes[i].attributes);
+	}
+}
+</script>
+</style>
+</head>
+
+<body>
+<h1>Introducción al DOM</h1>
+<p>¿Qué es el DOM?</p>
+<ul id="dom">
+  <li>Document</li>
+  <li>Object</li>
+  <li>Model</li>
+</ul>
+</body>
+</html>
