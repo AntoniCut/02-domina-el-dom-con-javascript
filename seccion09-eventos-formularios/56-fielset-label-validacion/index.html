@@ -1,0 +1,339 @@
+<!--  *****************************************************************************************************************************  -->
+<!--  **********  /02-domina-el-dom-con-javascript/seccion09-eventos-formularios/56-fielset-label-validacion/index.html  **********  -->
+<!--  *****************************************************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title> Sección 09 - Manejo de los Eventos y Elementos de un Formulario - Domina el DOM con JavaScript -
+        Udemy - Francisco
+        Javier Arce Anguiano </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="img/favicon-JS-2.ico">
+
+    <!--  **********  Estilos  **********  -->
+    <style>
+        body {
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        .header {
+            width: 100%;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid green;
+        }
+
+        .main {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* align-items: center; */
+            text-align: center;
+            margin-top: 20px;
+            gap: 50px;
+            font-size: 16px;
+        }
+
+        .ejemplos {
+            max-width: 600px;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            background-color: antiquewhite;
+        }
+
+        .botones-container {
+            display: flex;
+            gap: 100px;
+        }
+
+        .botones {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        /* button,
+        #enviar,
+        #limpiar,
+        .enviar {
+            width: auto;
+            color: white;
+            background-color: blueviolet;
+            padding: 10px;
+            border-radius: 15px;
+            cursor: pointer;
+        }
+
+        span {
+            color: black;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        img {
+            margin-left: 6px;
+            margin-right: 6px;
+            margin-top: 10px;
+            cursor: pointer;
+        } */
+
+        /*  **********  */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #botones {
+            width: 150px;
+            height: 180px;
+            background-color: white;
+            border: solid black 1px;
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: start;
+            align-items: start;
+        }
+
+        fieldset {
+            border: 2px solid #090;
+            margin-bottom: 5px;
+            padding-top: 5px;
+            padding-right: 5px;
+            padding-bottom: 10px;
+            padding-left: 5px;
+            margin-right: 15px;
+            margin-left: 15px;
+        }
+
+        legend {
+            font-size: 110%;
+            font-weight: bold;
+            color: #090;
+        }
+
+        fieldset p {
+            line-height: 1.1em;
+            margin-top: 5px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            margin-left: 0px;
+            font-size: 90%;
+        }
+
+        fieldset p input {
+            padding-left: 10px;
+            margin-left: 15px;
+        }
+
+        #submit,
+        #reset {
+            width: auto;
+            height: auto;
+            padding: 10px;
+            cursor: pointer;
+            color: white;
+            border-radius: 5px;
+            background-color: blueviolet;
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Sección 09 - Fielset, Label y Validación de Formularios. </h1>
+        <hr>
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+        <!--  -----  Formulario  -----  -->
+        <section class="ejemplos">
+
+            <form action="valida.php" method="post" id="tour">
+
+                <fieldset>
+                    <legend>Contacto:</legend>
+                    <p>
+                        <label for="nombre">Nombre:</label>
+                        <input name="nombre" type="text" id="nombre">
+                    </p>
+                    <p>
+                        <label for="email">Email:</label>
+                        <input type="text" name="email" id="email">
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Clave de acceso de entrada:</legend>
+                    <p>Tu plan de viaje y tus boletos de acceso a los eventos los puedes consultar en línea.</p>
+                    <p><em>Tu clave de acceso debe de contener entre 8 y 12 caracteres.</em></p>
+                    <p>
+                        <label for="clave1">Clave de acceso:</label>
+                        <input type="clave1" name="clave1" id="clave1">
+                    </p>
+                    <p>
+                        <label for="clave2">Confirma clave:</label>
+                        <input type="password" name="clave2" id="clave2">
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Luna de miel:</legend>
+                    <p>Fechas tentativas de salida:</p>
+                    <p>
+                        <label><input type="checkbox" name="fecha" value="fecha1" id="fecha1"> Febrero 15-25,
+                            2017</label><br>
+                        <label><input type="checkbox" name="fecha" value="fecha2" id="fecha2"> Marzo 7-17,
+                            2017</label><br>
+                        <label><input type="checkbox" name="fecha" value="fecha3" id="fecha3"> Abril 15-25,
+                            2017</label><br>
+                    </p>
+                    <p>¿Cuántas personas viajarán?<br>
+                        <label>
+                            <input type="radio" name="pasajeros" value="1" id="pasajeros1">
+                            Uno</label>
+                        <br>
+                        <label>
+                            <input type="radio" name="pasajeros" value="2" id="pasajeros2">
+                            Dos</label>
+                        <br>
+                        <label>
+                            <input type="radio" name="pasajeros" value="3" id="pasajeros3">
+                            Tres</label>
+                        <br>
+                        <label>
+                            <input type="radio" name="pasajeros" value="4" id="pasajeros4">
+                            Cuatro</label>
+                        <br>
+                        <label>
+                            <input type="radio" name="pasajeros" value="mas" id="pasajeros5">
+                            Más de 4</label>
+                        <br>
+                    </p>
+                    <p>
+                        <label for="observaciones">Observaciones y limitaciones:</label>
+                        <br>
+                        <textarea name="observaciones" id="observaciones" cols="60" rows="5"></textarea>
+                    </p>
+                    <p>Forma de pago:<br>
+                        <select name="pago" id="pago">
+                            <option value="efectivo">Efectivo</option>
+                            <option value="tarjeta" selected>Tarjeta de crédito</option>
+                            <option value="paypal">Pay Pal</option>
+                        </select>
+                    </p>
+                </fieldset>
+
+                <p>
+                    <input type="submit" name="submit" id="submit" value="Enviar">&nbsp;
+                    <input type="reset" name="reset" id="reset" value="Limpiar la forma">
+                </p>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <!--  **********  Código JS  **********  -->
+    <script>
+
+        window.onload = function () {
+
+
+            //  -----  Elementos del Formulario  -----
+            f = document.forms["tour"];
+            n = f.elements.length;
+            fs = 0;
+            for (i = 0; i < n; i++) {
+                e = f.elements[i];
+                if (e.type == "fieldset") fs++;
+                console.log("iteración " + (i + 1) + " - " + e.type, ": ", e.id, e.name, e.value);
+            }
+            console.info("Este formulario tiene", fs, "secciones");
+
+
+            //  -----  Validacion del Formulario  -----
+
+            f = document.forms["tour"];
+            n = f.elements.length;
+
+            //Instancias
+            forma = document.getElementById("tour");
+            clave1 = document.getElementById("clave1");
+            clave2 = document.getElementById("clave2");
+            nombre = document.getElementById("nombre");
+            email = document.getElementById("email");
+            fechas = document.querySelectorAll("input[type=checkbox]");
+            pasajeros = document.querySelectorAll("input[type=radio]");
+
+            //Listeners para detectar el envio de la forma
+            forma.onsubmit = function () {
+
+                //  recuperamos los dos valores de nombre y email
+                var nombre1 = nombre.value;
+                var email1 = email.value; 
+                
+                //Recuperamos los dos valores de cada caja de las claves
+                var valor1 = clave1.value;
+                var valor2 = clave2.value;
+
+                //Verificamos que no esten vacio los campos
+                var fecha = new Array();
+                for (var i = 0; i < fechas.length; i++) {
+                    if (fechas[i].checked) fecha.push(fechas[i].value);
+                }
+
+                var pasajero = 0;
+                for (var i = 0; i < pasajeros.length; i++) {
+                    if (pasajeros[i].checked) pasajero = pasajeros[i].value;
+                }
+
+                if(nombre1 == "") alert("Debe de introducir un nombre");
+                else if(email1 == "") alert("Debe de introducir un email");
+                else if (valor1 == "" || valor2 == "") alert("Claves erróneas");
+                else if (valor1 != valor2) alert("Claves no coinciden");
+                else if (fecha.length == 0) alert("Debe seleccionar una fecha");
+                else if (pasajero == 0) alert("Debe seleccionar el número de pasajeros");
+                else {
+                    alert("Datos correctos, enviando la información");
+                    return true;
+                }
+                return false;
+            }
+
+
+            //  -----  Resetear los valores del formulario  -----
+            forma.onreset = function () {
+                return confirm("¿Desea limpiar los datos?\nSe perderá la información.");
+            }
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>
