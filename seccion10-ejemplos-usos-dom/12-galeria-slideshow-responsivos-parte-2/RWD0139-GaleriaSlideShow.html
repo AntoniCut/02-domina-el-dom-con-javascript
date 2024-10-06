@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Galeria y slideshow responsivos</title>
+	<link rel="stylesheet" type="text/css" href="RWD0139-GaleriaSlideShow.css">
+	<script src="RWD0139-GaleriaSlideShow.js"></script>
+</head>
+<body>
+	<div class="contenedor">
+		<div class="foto">
+			<div class="numero">1/6</div>
+			<img src="galeria/fondo1.jpg" width="100%">
+		</div>
+
+		<div class="foto">
+			<div class="numero">2/6</div>
+			<img src="galeria/fondo2.jpg" width="100%">
+		</div>
+
+		<div class="foto">
+			<div class="numero">3/6</div>
+			<img src="galeria/fondo3.jpg" width="100%">
+		</div>
+
+
+		<div class="foto">
+			<div class="numero">4/6</div>
+			<img src="galeria/fondo4.jpg" width="100%">
+		</div>
+
+
+		<div class="foto">
+			<div class="numero">5/6</div>
+			<img src="galeria/fondo5.jpg" width="100%">
+		</div>
+
+
+		<div class="foto">
+			<div class="numero">6/6</div>
+			<img src="galeria/fondo6.jpg" width="100%">
+		</div>
+
+		<a class="antes" onclick="mueve(-1)">&#10094;</a>
+		<a class="despues" onclick="mueve(1)">&#10095;</a>
+
+		<div class="contenedorTexto">
+			<p id="texto"></p>
+		</div>
+
+		<div class="renglon">
+			<div class="columna">
+				<img class="muestra cursor" src="galeria/fondo1.jpg" width="100%" onclick="foto(1)" alt="El partenón de día">
+			</div>
+
+			<div class="columna">
+				<img class="muestra cursor" src="galeria/fondo2.jpg" width="100%" onclick="foto(2)" alt="El partenón de día">
+			</div>
+
+			<div class="columna">
+				<img class="muestra cursor" src="galeria/fondo3.jpg" width="100%" onclick="foto(3)" alt="El partenón de día">
+			</div>
+
+			<div class="columna">
+				<img class="muestra cursor" src="galeria/fondo4.jpg" width="100%" onclick="foto(4)" alt="Villa ateniense">
+			</div>
+
+			<div class="columna">
+				<img class="muestra cursor" src="galeria/fondo5.jpg" width="100%" onclick="foto(5)" alt="El partenón de noche">
+			</div>
+
+			<div class="columna">
+				<img class="muestra cursor" src="galeria/fondo6.jpg" width="100%" onclick="foto(6)" alt="Andrómeda">
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>

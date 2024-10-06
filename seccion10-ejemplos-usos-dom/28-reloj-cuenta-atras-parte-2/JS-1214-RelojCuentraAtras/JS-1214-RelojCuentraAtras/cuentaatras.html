@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Cuenta Atrás</title>
+	<script>
+		window.onload = function() {
+			cuentaatras("Jun 21 2019 22:14:40 GMT-0500","reloj","Booom");
+		}
+		function cuentaatras(fechaFinal, elem, mensaje){
+			var reloj = document.getElementById(elem);
+			
+			var idReloj = setInterval(function(){
+				var t = despliegaReloj(fechaFinal);
+				reloj.innerHTML = t.diasRestantes+":"+t.horasRestantes+":"+t.minutosRestantes+":"+t.segundosRestantes;
+				if(t.tiempoRestante <= 1){
+					clearInterval(idReloj);
+					reloj.innerHTML = mensaje;
+				}
+
+			}, 1000);
+		}
+		function despliegaReloj(fechaFinal){
+			var now = new Date();
+			var tiempoRestante = (new Date(fechaFinal)-now+1000)/1000;
+			var segundosRestantes = ('0'+Math.floor(tiempoRestante%60)).slice(-2);
+			var minutosRestantes = ('0'+Math.floor(tiempoRestante/60%60)).slice(-2);
+			var horasRestantes = ('0'+Math.floor(tiempoRestante/3600%24)).slice(-2);
+			var diasRestantes = Math.floor(tiempoRestante/(3600*24));
+			return {
+				tiempoRestante:tiempoRestante,
+				segundosRestantes:segundosRestantes,
+				minutosRestantes:minutosRestantes,
+				horasRestantes:horasRestantes,
+				diasRestantes:diasRestantes
+			}
+		}
+	</script>
+	<style type="text/css">
+		#reloj{
+			font-size: 5em;
+			text-align: center;
+			margin: 1em;
+		}
+	</style>
+</head>
+<body>
+<div id="reloj"></div>
+</body>
+</html>

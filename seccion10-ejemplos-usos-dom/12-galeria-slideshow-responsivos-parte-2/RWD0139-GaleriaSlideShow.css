@@ -1,0 +1,50 @@
+*{ box-sizing: border-box; }
+.contenedor{ position: relative;}
+.foto { display: none; }
+.cursor{ cursor: pointer; }
+.antes, .despues{
+	cursor: pointer;
+	position: absolute;
+	top:50%;
+	width: auto;
+	padding: 1em;
+	margin-top: -22px;
+	color:white;
+	font-weight: bold;
+	font-size: 18px;
+	transition: 1s ease;
+	border-radius: 0 3px 3px 0;
+}
+.despues{
+	right:0;
+	border-radius: 3px 0 0 3px;
+}
+.antes:hover, .despues:hover{
+	background-color: gray;
+}
+.numero{
+	color:white;
+	font-size: 1em;
+	padding: 8px 12px;
+	position: absolute;
+	top:0;
+}
+.contenedorTexto{
+	text-align: center;
+	background-color: black;
+	padding: 2px 16px;
+	color: white;
+}
+.renglon:after{
+	content: "";
+	display: table;
+	clear:both;
+}
+.muestra{ opacity: 0.6; }
+.activo, .muestra:hover{
+	opacity:1;
+}
+.columna{
+	float:left;
+	width: 16.66%;
+}

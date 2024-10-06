@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Cuenta Atrás</title>
+	<script>
+		window.onload = function() {
+			cuentaatras("Jun 21 2019 21:45:40 GTM-0500","reloj","Booom");
+		}
+		function cuentaatras(fechaFinal, elem, mensaje){
+			var reloj = document.getElementById(elem);
+			var idReloj = setInterval(function(){
+				reloj.innerHTML = fechaFinal;
+
+			}, 1000);
+		}
+	</script>
+	<style type="text/css">
+		#reloj{
+			font-size: 5em;
+			text-align: center;
+			margin: 1em;
+		}
+	</style>
+</head>
+<body>
+<div id="reloj"></div>
+</body>
+</html>

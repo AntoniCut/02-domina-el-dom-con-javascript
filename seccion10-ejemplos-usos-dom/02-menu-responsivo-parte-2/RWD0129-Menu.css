@@ -1,0 +1,60 @@
+/* font family */
+@font-face {
+  font-family: 'bitstream_vera_serifbold';
+  src: url('fonts/bitstreamveraserif_bold_macroman/VeraSerif-Bold-webfont.eot');
+  src: url('fonts/bitstreamveraserif_bold_macroman/VeraSerif-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+    url('fonts/bitstreamveraserif_bold_macroman/VeraSerif-Bold-webfont.woff') format('woff'),
+    url('fonts/bitstreamveraserif_bold_macroman/VeraSerif-Bold-webfont.ttf') format('truetype'),
+    url('fonts/bitstreamveraserif_bold_macroman/VeraSerif-Bold-webfont.svg#bitstream_vera_serifbold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+
+}
+/* basic reset */
+*, *:before, *:after { 
+	padding: 0;
+	margin: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+/* nav bar */
+nav {
+  width: 100%;
+  margin: auto;  
+}
+ 
+nav ul {
+  list-style: none;
+  overflow: hidden;
+	background: #000;
+}
+nav li a {
+  display: block;
+  float: left;
+  width: 14.28%; 
+  padding: 10px;
+  background: #000;
+  border-right: 1px solid #fff;
+  color: #fbd91f;  
+  font: 400 13px/1.4 bitstream_vera_serifbold, Baskerville, "Palatino Linotype", Palatino, "Times New Roman", serif;	
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+/* small text */
+nav small {
+  color: #aaa;  
+  font: 100 11px/1 Helvetica, Verdana, Arial, sans-serif;
+  text-transform: none;
+}
+
+/* default to smallest browser size */ 
+nav ul { display: none; }
+nav select { display: inline-block; }
+
+/* change to full nav for larger screens */ 
+@media screen and (min-width: 481px) {
+  nav ul { display: block; }
+  nav select { display: none; }
+}

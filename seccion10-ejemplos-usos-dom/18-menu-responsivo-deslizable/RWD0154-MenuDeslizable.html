@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Menu deslizable</title>
+	<meta charset="utf-8">
+	<style>
+		.menu{
+			height: 100%;
+			width: 0;
+			position: fixed;
+			z-index: 1;
+			top: 0;
+			left:0;
+			background-color: black;
+			overflow-x: hidden;
+			transition: 0.5s;
+			padding-top: 60px;
+		}
+		.menu a{
+			padding: 8px 8px 8px 32px;
+			text-decoration: none;
+			font-size: 2em;
+			color: white;
+			display: block;
+			transition: 0.5s;
+		}
+		.menu a:hover{
+			color:gray;
+		}
+		.menu .cerrar{
+			position: absolute;
+			top:0;
+			right: 25px;
+			font-size: 2em;
+			margin-left: 50px;
+		}
+		.abreMenu{
+			font-size: 2em;
+			cursor: pointer;
+		}
+		@media screen and (max-height: 450px) {
+			.menu {padding-top: 15px;}
+			.menu a{font-size: 18px;}
+		}
+	</style>
+	<script>
+		window.onload = function(){
+			document.getElementById("abre").onclick = function(){
+				document.getElementById("miMenu").style.width = "250px";
+			}
+			document.getElementById("cerrarMenu").onclick = function(){
+				document.getElementById("miMenu").style.width = "0";
+			}
+		}
+	</script>
+</head>
+<body>
+	<div class="menu" id="miMenu">
+		<a href="#" class="cerrar" id="cerrarMenu">&times;</a>
+		<a href="#">Inicio</a>
+		<a href="#">Cursos</a>
+		<a href="#">Libros</a>
+		<a href="#">Contacto</a>
+	</div>
+	<h2>Menú deslizable</h2>
+	<span class="abreMenu" id="abre">&#9776; Menú</span>
+</body>
+</html>

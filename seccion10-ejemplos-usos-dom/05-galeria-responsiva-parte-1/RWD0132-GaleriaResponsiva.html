@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Galería responsiva</title>
+	<meta charset="utf-8">
+	<style>
+		*{ box-sizing: border-box; }
+		body{margin:0;}
+		.columna{
+			float:left;
+			width:25%;
+			padding: 10px;
+		}
+		.columna img{
+			opacity: .7;
+			cursor: pointer;
+		}
+		.columna img:hover{
+			opacity: 1;
+		}
+		h2{ text-align: center; }
+
+
+	</style>
+</head>
+<body>
+	<h2>Galería responsiva</h2>
+
+	<div class="renglon">
+		<div class="columna">
+			<img src="img/afrodita2.jpg" alt="La Venus del espejo" width="100%" onclick="despliega(this)">
+		</div>
+		<div class="columna">
+			<img src="img/afrodita7.jpg" alt="El nacimiento de Venus" width="100%" onclick="despliega(this)">
+		</div>
+		<div class="columna">
+			<img src="img/hercules3.jpg" alt="Hércules" width="100%" onclick="despliega(this)">
+		</div>
+		<div class="columna">
+			<img src="img/medusa.jpg" alt="La cabeza de Medusa" width="100%" onclick="despliega(this)">
+		</div>
+	</div>
+	<div class="contenido">
+		<span onclick="this.parentElement.style.display='none'" class="cerrar">&times;</span>
+		<img id="imagen" width="100%">
+		<div id="texto"> </div>
+	</div>
+
+</body>
+</html>

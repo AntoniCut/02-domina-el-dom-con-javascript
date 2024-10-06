@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tabuladores</title>
+	<meta charset="utf-8">
+	<style>	
+		*{ box-sizing: border-box; }
+		.tabuladores{
+			float:left;
+			border: 1px solid #ccc;
+			background-color: #f1f1f1;
+			width:30%;
+			height: 380px;
+		}
+		.tabuladores button{
+			display: block;
+			color:black;
+			padding: 22px 16px;
+			width: 100%;
+			border: none;
+			outline: none;
+			text-align: left;
+			cursor: pointer;
+			transition: 0.5s;
+			font-size: 1em;
+		}
+		.tabuladores button:hover{
+			background-color: orange;
+		}
+		.contenido{
+			float: left;
+			padding: 0 1em;
+			border: 1px solid gray;
+			width: 70%;
+			border-left: none;
+			height: 380px;
+		}
+		.tabuladores button.activo{
+			background-color: orange;
+		}
+	</style>
+	<script>
+		window.onload = function() {
+			document.getElementById("primero").click();
+		}
+		function muestra(e, num){
+			var contenido_array = document.getElementsByClassName("contenido");
+			var botones_array = document.getElementsByClassName("link");
+			for (var i = 0; i < contenido_array.length; i++) {
+				contenido_array[i].style.display = "none";
+			}
+			document.getElementById("foto"+num).style.display = "block";
+			//apagamos loa botones
+			for (var i = 0; i < botones_array.length; i++) {
+				botones_array[i].className = botones_array[i].className.replace("activo");
+			}
+			e.currentTarget.className += " activo";
+		}
+	</script>
+</head>
+<body>
+<h2>Tabuladores</h2>
+<div class="tabuladores">
+	<button class="link" onclick="muestra(event, 1)" id="primero">Foto1</button>
+	<button class="link" onclick="muestra(event, 2)">Foto2</button>
+	<button class="link" onclick="muestra(event, 3)">Foto3</button>
+	<button class="link" onclick="muestra(event, 4)">Foto4</button>
+	<button class="link" onclick="muestra(event, 5)">Foto5</button>
+	<button class="link" onclick="muestra(event, 6)">Foto6</button>
+</div>
+<div class="contenido" id="foto1">
+	<img src="imagenes/fondo1.jpg">
+</div>
+<div class="contenido" id="foto2">
+	<img src="imagenes/fondo2.jpg">
+</div>
+<div class="contenido" id="foto3">
+	<img src="imagenes/fondo3.jpg">
+</div>
+<div class="contenido" id="foto4">
+	<img src="imagenes/fondo4.jpg">
+</div>
+<div class="contenido" id="foto5">
+	<img src="imagenes/fondo5.jpg">
+</div>
+<div class="contenido" id="foto6">
+	<img src="imagenes/fondo6.jpg">
+</div>
+</body>
+</html>
