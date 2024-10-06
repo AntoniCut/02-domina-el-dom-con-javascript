@@ -1,0 +1,194 @@
+/*  ************************************************************************************  */
+/*  **********  /02-domina-el-dom-con-javascript/seccion10-ejemplos-usos-dom  **********  */
+/*  **********  /60-slideshow-imagenes-responsivas/css/styles.css  *********************  */
+/*  ************************************************************************************   */
+
+
+/*  *****  Estilos Generales  *****  */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(to bottom, #aaa, #eee, #aaa);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 10px solid #333333;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/*  *****  Estilos del Proyecto  *****  */
+
+.foto {
+    display: block;
+}
+
+img {
+    /* width: 50%; */
+    vertical-align: middle;
+}
+
+#contenedor {
+    position: relative;
+    width: 70%;
+    padding: 50px;
+    /* max-width: 1000px; */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: auto;
+    margin-top: 100px;
+    background: linear-gradient(to bottom, #aaa, #eee, #aaa);
+}
+
+.antes, .despues {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 1em;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 1s ease;
+    border-radius: 0 3px 3px 0;
+}
+
+.despues {
+    right: 50px;
+    border-radius: 3px 0 0 3px;
+}
+
+.antes:hover, .despues:hover {
+    background-color: gray;
+}
+
+.texto {
+    color: white;
+    font-size: 24px;
+    padding: 8px 12px;
+    position: absolute;
+    left: 0%;
+    bottom: 5px;
+    width: 100%;
+    text-align: center;
+}
+
+.numero {
+    color: white;
+    font-size: 24px;
+    padding: 10px 12px;
+    position: absolute;
+    top: 0;
+}
+
+.bolita {
+    cursor: pointer;
+    height: 25px;
+    width: 25px;
+    margin-top: 0 2px;
+    margin-right: 10px;
+    background-color: #da6f6f;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 1s ease;
+}
+
+#bolitas {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.activo, .bolita:hover {
+    background-color: #717171;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1s;
+    animation-name: fade;
+    animation-duration: 1s;
+}
+
+
+/*  *****  Animaciones  *****  */
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/*  *****  Responsive  *****  */
+
+@media (max-width: 1200px) {
+    
+    #contenedor {
+        width: 90%;
+    }
+}
+
+@media (max-width: 650px) {
+    
+    .header {
+        font-size: 12px;
+    }
+
+    .antes, .despues, .texto, .numero {
+        font-size: 16px;
+    }
+}
+
+
+
+@media (max-width: 400px) {
+    
+    #contenedor {
+        width: 95%;
+        padding: 30px;
+    }
+    
+    .antes, .despues, .texto, .numero {
+        font-size: 10px;
+    }
+}
