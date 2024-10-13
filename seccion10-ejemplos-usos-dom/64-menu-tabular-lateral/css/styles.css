@@ -1,0 +1,93 @@
+/*  ************************************************************************************  */
+/*  **********  /02-domina-el-dom-con-javascript/seccion10-ejemplos-usos-dom  **********  */
+/*  **********  /63-menu-tabular-lateral/css/styles.css  *******************************  */
+/*  ************************************************************************************   */
+
+
+/*  *****  Estilos Generales  *****  */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(to bottom, #aaa, #eee, #aaa);
+    /* background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; */
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 10px solid #333333;
+}
+
+.main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/*  *****  Estilos del Proyecto  *****  */
+
+h2 {
+    margin-bottom: 50px;
+}
+
+img {
+    width: 600px;
+    height: 375px;
+}
+
+.menu-container {
+    display: flex;
+}
+
+.tabuladores {
+    float: left;
+    background-color: transparent;
+    width: 30%;
+    height: 380px;
+}
+
+.tabuladores button {
+    display: block;
+    color: black;
+    padding: 22px 16px;
+    width: 100%;
+    border: none;
+    outline: none;
+    text-align: left;
+    cursor: pointer;
+    transition: 0.5s;
+    font-size: 1em;
+}
+
+.tabuladores button:hover {
+    background-color: orange;
+}
+
+.contenido {
+    float: left;
+    padding: 0 1em;
+    width: 70%;
+    height: 380px;
+}
+
+.tabuladores button.activo {
+    background-color: orange;
+}
