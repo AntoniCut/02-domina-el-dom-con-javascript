@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Menu encabezado</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<script>
+		var menu, desplazamiento;
+		window.onload = function () {
+			menu = document.getElementById("menu");
+			desplazamiento = menu.offsetTop;
+		}
+		window.onscroll = function () {
+			if (window.pageYOffset >= desplazamiento) {
+				menu.classList.add("fijar");
+			} else {
+				menu.classList.remove("fijar");
+			}
+		}
+	</script>
+	<style>
+		body {
+			margin: 0;
+		}
+
+		.encabezado {
+			background-color: orange;
+			padding: 30px;
+			text-align: center;
+		}
+
+		#menu {
+			overflow: hidden;
+			background-color: black;
+		}
+
+		#menu a {
+			float: left;
+			display: block;
+			color: white;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+			font-size: 1em;
+		}
+
+		#menu a:hover {
+			background-color: gray;
+		}
+
+		#menu a.activo {
+			background-color: orange;
+		}
+
+		.contenido {
+			padding: 1em;
+			font-size: 2em;
+		}
+
+		.fijar {
+			position: fixed;
+			top: 0;
+			width: 100%;
+		}
+
+		.fijar+.contendio {
+			padding-top: 60px;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="encabezado">
+		<img src="imagenes/afrodita.jpg" width="350px">
+	</div>
+	<div id="menu">
+		<a href="#" class="activo">Inicio</a>
+		<a href="#">Cursos</a>
+		<a href="#">Libros</a>
+		<a href="#">Contacto</a>
+	</div>
+	<div class="contenido">
+		<h2>Menú Enzabezado</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem iusto consequatur obcaecati incidunt
+			ab odit animi eligendi assumenda voluptates velit dolorum, accusamus veritatis placeat nihil, quaerat
+			explicabo omnis amet distinctio?</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea aut, ex natus nostrum fugiat vero asperiores
+			culpa, cumque impedit ab praesentium maiores id aliquid, sunt. Eos expedita soluta incidunt odit?</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, porro vero minima consectetur accusamus
+			voluptatibus, assumenda officiis voluptatem, facilis molestias mollitia debitis facere laborum, veritatis
+			quasi blanditiis itaque sed laudantium.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem iusto consequatur obcaecati incidunt
+			ab odit animi eligendi assumenda voluptates velit dolorum, accusamus veritatis placeat nihil, quaerat
+			explicabo omnis amet distinctio?</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea aut, ex natus nostrum fugiat vero asperiores
+			culpa, cumque impedit ab praesentium maiores id aliquid, sunt. Eos expedita soluta incidunt odit?</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, porro vero minima consectetur accusamus
+			voluptatibus, assumenda officiis voluptatem, facilis molestias mollitia debitis facere laborum, veritatis
+			quasi blanditiis itaque sed laudantium.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem iusto consequatur obcaecati incidunt
+			ab odit animi eligendi assumenda voluptates velit dolorum, accusamus veritatis placeat nihil, quaerat
+			explicabo omnis amet distinctio?</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea aut, ex natus nostrum fugiat vero asperiores
+			culpa, cumque impedit ab praesentium maiores id aliquid, sunt. Eos expedita soluta incidunt odit?</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, porro vero minima consectetur accusamus
+			voluptatibus, assumenda officiis voluptatem, facilis molestias mollitia debitis facere laborum, veritatis
+			quasi blanditiis itaque sed laudantium.</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem iusto consequatur obcaecati incidunt
+			ab odit animi eligendi assumenda voluptates velit dolorum, accusamus veritatis placeat nihil, quaerat
+			explicabo omnis amet distinctio?</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea aut, ex natus nostrum fugiat vero asperiores
+			culpa, cumque impedit ab praesentium maiores id aliquid, sunt. Eos expedita soluta incidunt odit?</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum, porro vero minima consectetur accusamus
+			voluptatibus, assumenda officiis voluptatem, facilis molestias mollitia debitis facere laborum, veritatis
+			quasi blanditiis itaque sed laudantium.</p>
+	</div>
+</body>
+
+</html>
