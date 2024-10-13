@@ -1,0 +1,122 @@
+<!--  ************************************************************************************  -->
+<!--  **********  /02-domina-el-dom-con-javascript/seccion10-ejemplos-usos-dom  **********  -->
+<!--  **********  /61-galeria-slideshow--responsivos/index.html  *************************  -->
+<!--  ************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Galeria SlideShow Responsivos - Sección 10 - Ejemplos del Uso del DOM - Domina el DOM con JavaScript -
+        Udemy - Francisco Javier Arce Anguiano </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="img/favicon-JS-2.ico">
+
+    <!--  **********  Estilos  **********  -->
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Galeria SlideShow Responsivos - Sección 10 - Ejemplos del Uso del DOM. </h1>
+        <hr>
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+
+
+        <div class="contenedor">
+            <div class="foto">
+                <div class="numero">1/6</div>
+                <img src="galeria/fondo1.jpg" width="100%" height="500px">
+            </div>
+
+            <div class="foto">
+                <div class="numero">2/6</div>
+                <img src="galeria/fondo2.jpg" width="100%" height="500px">
+            </div>
+
+            <div class="foto">
+                <div class="numero">3/6</div>
+                <img src="galeria/fondo3.jpg" width="100%" height="500px">
+            </div>
+
+
+            <div class="foto">
+                <div class="numero">4/6</div>
+                <img src="galeria/fondo4.jpg" width="100%" height="500px">
+            </div>
+
+
+            <div class="foto">
+                <div class="numero">5/6</div>
+                <img src="galeria/fondo5.jpg" width="100%" height="500px">
+            </div>
+
+
+            <div class="foto">
+                <div class="numero">6/6</div>
+                <img src="galeria/fondo6.jpg" width="100%" height="500px">
+            </div>
+
+            <a class="antes" onclick="mueve(-1)">&#10094;</a>
+            <a class="despues" onclick="mueve(1)">&#10095;</a>
+
+            <div class="contenedorTexto">
+                <p id="texto"></p>
+            </div>
+
+            <div class="renglon">
+                <div class="columna">
+                    <img class="muestra cursor" src="galeria/fondo1.jpg" width="100%" onclick="foto(1)"
+                        alt="El partenón de día">
+                </div>
+
+                <div class="columna">
+                    <img class="muestra cursor" src="galeria/fondo2.jpg" width="100%" onclick="foto(2)"
+                        alt="El partenón de día">
+                </div>
+
+                <div class="columna">
+                    <img class="muestra cursor" src="galeria/fondo3.jpg" width="100%" onclick="foto(3)"
+                        alt="El partenón de día">
+                </div>
+
+                <div class="columna">
+                    <img class="muestra cursor" src="galeria/fondo4.jpg" width="100%" onclick="foto(4)"
+                        alt="Villa ateniense">
+                </div>
+
+                <div class="columna">
+                    <img class="muestra cursor" src="galeria/fondo5.jpg" width="100%" onclick="foto(5)"
+                        alt="El partenón de noche">
+                </div>
+
+                <div class="columna">
+                    <img class="muestra cursor" src="galeria/fondo6.jpg" width="100%" onclick="foto(6)" alt="Andrómeda">
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+
+    <!--  **********  Código JS  **********  -->
+    <script src="js/galeria-slideshow-responsivos.js"> </script>
+
+
+</body>
+
+</html>

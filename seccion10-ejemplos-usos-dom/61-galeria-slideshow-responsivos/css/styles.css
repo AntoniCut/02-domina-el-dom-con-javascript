@@ -1,0 +1,121 @@
+/*  ************************************************************************************  */
+/*  **********  /02-domina-el-dom-con-javascript/seccion10-ejemplos-usos-dom  **********  */
+/*  **********  /61-galeria-slideshow-responsivos/css/styles.css  **********************  */
+/*  ************************************************************************************   */
+
+
+/*  *****  Estilos Generales  *****  */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(to bottom, #aaa, #eee, #aaa);
+    /* background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; */
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 10px solid #333333;
+}
+
+.main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px; 
+}
+
+
+/*  *****  Estilos del Proyecto  *****  */
+
+.contenedor {
+    position: relative;
+}
+
+.foto {
+    display: block;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+.antes {
+    left: 0;
+}
+
+
+.antes, .despues {
+    cursor: pointer;
+    position: absolute;
+    top: 25%;
+    width: auto;
+    padding: 1em;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 54px;
+    transition: 1s ease;
+    border-radius: 0 3px 3px 0;
+}
+
+.despues {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.antes:hover, .despues:hover {
+    background-color: gray;
+}
+
+.numero {
+    color: white;
+    font-size: 54px;
+    padding: 8px 12px;
+    position: absolute;
+    top: 0;
+}
+
+.contenedorTexto {
+    height: 50px;
+    font-size: 36px;
+    text-align: center;
+    background-color: black;
+    padding: 2px 16px;
+    color: white;
+}
+
+.renglon:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.muestra {
+    opacity: 0.6;
+}
+
+.activo, .muestra:hover {
+    opacity: 1;
+}
+
+.columna {
+    float: left;
+    width: 16.66%;
+}
