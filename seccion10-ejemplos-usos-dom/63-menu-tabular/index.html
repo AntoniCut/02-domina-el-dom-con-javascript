@@ -1,0 +1,64 @@
+<!--  ************************************************************************************  -->
+<!--  **********  /02-domina-el-dom-con-javascript/seccion10-ejemplos-usos-dom  **********  -->
+<!--  **********  /63-menu-tabular/index.html  *******************************************  -->
+<!--  ************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Menu Tabular - Sección 10 - Ejemplos del Uso del DOM - Domina el DOM con JavaScript -
+        Udemy - Francisco Javier Arce Anguiano </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="img/favicon-JS-2.ico">
+
+    <!--  **********  Estilos  **********  -->
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Menu Tabular - Sección 10 - Ejemplos del Uso del DOM. </h1>
+        <hr>
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+        <h2>Menu Tabular</h2>
+        
+        <div class="tabuladores">
+            <button class="link" onclick="muestra(1)">Foto1</button>
+            <button class="link" onclick="muestra(2)">Foto2</button>
+            <button class="link" onclick="muestra(3)">Foto3</button>
+        </div>
+        
+        <div class="contenido" id="foto1">
+            <img src="imagenes/fondo1.jpg">
+        </div>
+        
+        <div class="contenido" id="foto2">
+            <img src="imagenes/fondo2.jpg">
+        </div>
+        
+        <div class="contenido" id="foto3">
+            <img src="imagenes/fondo3.jpg">
+        </div>
+
+    </main>
+
+    <!--  **********  Código JS  **********  -->
+    <script src="js/menu-tabular.js"> </script>
+
+</body>
+
+</html>

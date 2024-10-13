@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Tabuladores</title>
+	<meta charset="utf-8">
+	<style>	
+		.tabuladores{
+			overflow: hidden;
+			border: 1px solid #ccc;
+			background-color: #f1f1f1;
+		}
+		.tabuladores button{
+			float:left;
+			border:none;
+			outline: none;
+			cursor: pointer;
+			padding: 14px 16px;
+			transition: 0.3s;
+			font-size: 1em;
+		}
+		.tabuladores button:hover{
+			background-color: orange;
+		}
+		.contenido{
+			display:none;
+			padding: .5em 1em;
+			border: 1px solid #ccc;
+			border-top:none;
+		}
+	</style>
+	<script>
+		function muestra(e, num){
+			var contenido_array = document.getElementsByClassName("contenido");
+			for (var i = 0; i < contenido_array.length; i++) {
+				contenido_array[i].style.display = "none";
+			}
+			document.getElementById("foto"+num).style.display = "block";
+		}
+	</script>
+</head>
+<body>
+<h2>Tabuladores</h2>
+<div class="tabuladores">
+	<button class="link" onclick="muestra(event, 1)">Foto1</button>
+	<button class="link" onclick="muestra(event, 2)">Foto2</button>
+	<button class="link" onclick="muestra(event, 3)">Foto3</button>
+</div>
+<div class="contenido" id="foto1">
+	<img src="imagenes/fondo1.jpg">
+</div>
+<div class="contenido" id="foto2">
+	<img src="imagenes/fondo2.jpg">
+</div>
+<div class="contenido" id="foto3">
+	<img src="imagenes/fondo3.jpg">
+</div>
+</body>
+</html>

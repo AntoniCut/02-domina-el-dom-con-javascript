@@ -1,0 +1,92 @@
+/*  ************************************************************************************  */
+/*  **********  /02-domina-el-dom-con-javascript/seccion10-ejemplos-usos-dom  **********  */
+/*  **********  /63-menu-tabular/css/styles.css  ***************************************  */
+/*  ************************************************************************************   */
+
+
+/*  *****  Estilos Generales  *****  */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(to bottom, #aaa, #eee, #aaa);
+    /* background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; */
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 10px solid #333333;
+}
+
+.main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/*  *****  Estilos del Proyecto  *****  */
+
+h2 {
+    margin-bottom: 50px;
+}
+
+img {
+    width: 600px;
+    height: 400px;
+}
+
+/* button {
+    width: 100px;
+    height: 30px;
+    background-color: blueviolet;
+    margin-right: 20px;
+} */
+
+.tabuladores {
+    overflow: hidden;
+    display: flex;
+    gap: 20px;
+    border: 1px solid #ccc;
+}
+
+.tabuladores button {
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 1em;
+    color: #ffffff;
+    background-color: blueviolet;
+}
+
+.tabuladores button:hover {
+    background-color: orange;
+}
+
+.contenido {
+    display: none;
+    margin-top: 20px;
+    padding: .5em 1em;
+    border: 1px solid #ccc;
+    border-top: none;
+}
