@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Menu Oculto</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<style>
+		*{margin:0; padding: 0;}
+		#menu{
+			background-color: orange;
+			position: fixed;
+			top:-50px;
+			width: 100%;
+			display: block;
+			transition: top 0.5s;
+		}
+		#menu a{
+			float: left;
+			display: block;
+			color: white;
+			text-align: center;
+			padding: 14px 16px;
+			text-decoration: none;
+			font-size: 1em;
+		}
+		#menu a:hover{
+			background-color: gray;
+		}
+		.contenido{
+			padding: 16px 16px 2500px;
+			font-size: 2em;
+		}
+	</style>
+	<script>
+		window.onscroll=function(){
+			if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+				document.getElementById("menu").style.top = "0";
+			} else {
+				document.getElementById("menu").style.top = "-50px";
+			}
+		}
+	</script>
+</head>
+<body>
+<div id="menu">
+	<a href="#">Inicio</a>
+	<a href="#">Cursos</a>
+	<a href="#">Libros</a>
+	<a href="#">Contacto</a>
+</div>
+<div class="contenido">
+	<h2>Menu fijo</h2>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A cumque vero mollitia, recusandae debitis. Expedita tempore nostrum deleniti voluptas, recusandae, quas hic! Qui blanditiis provident aliquam, placeat nemo id vitae.</p>
+	<img src="imagenes/afrodita.jpg" width="100%">
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati laboriosam ratione itaque necessitatibus esse nostrum ut debitis a perspiciatis reiciendis vel velit pariatur, vitae assumenda ipsa explicabo quaerat eligendi magni?</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati laboriosam ratione itaque necessitatibus esse nostrum ut debitis a perspiciatis reiciendis vel velit pariatur, vitae assumenda ipsa explicabo quaerat eligendi magni?</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati laboriosam ratione itaque necessitatibus esse nostrum ut debitis a perspiciatis reiciendis vel velit pariatur, vitae assumenda ipsa explicabo quaerat eligendi magni?</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati laboriosam ratione itaque necessitatibus esse nostrum ut debitis a perspiciatis reiciendis vel velit pariatur, vitae assumenda ipsa explicabo quaerat eligendi magni?</p>
+	<img src="imagenes/mercurio.jpg">
+
+</div>
+</body>
+</html>

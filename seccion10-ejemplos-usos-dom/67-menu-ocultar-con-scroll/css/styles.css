@@ -1,0 +1,84 @@
+/*  ************************************************************************************  */
+/*  **********  /02-domina-el-dom-con-javascript/seccion10-ejemplos-usos-dom  **********  */
+/*  **********  /67-menu-ocultar-con-scroll/css/styles.css  ****************************  */
+/*  ************************************************************************************   */
+
+
+/*  *****  Estilos Generales  *****  */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(to bottom, #aaa, #eee, #aaa);
+    /* background-size: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; */
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 10px solid #333333;
+}
+
+.main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    gap: 50px;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+/*  *****  Estilos del Proyecto  *****  */
+
+.titulo {
+    margin-bottom: 30px;
+    font-size: 48px;
+}
+
+#menu{
+    background-color: orange;
+    position: fixed;
+    top:-50px;
+    width: 100%;
+    display: block;
+    transition: top 0.5s;
+}
+
+#menu a{
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 1em;
+}
+
+#menu a:hover{
+    background-color: gray;
+}
+
+.contenido{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding: 16px 16px 25px;
+    font-size: 16px;
+}
