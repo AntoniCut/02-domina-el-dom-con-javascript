@@ -1,0 +1,123 @@
+/*  *************************************************************************************  */
+/*  **********  /02-domina-el-dom-con-javascript/seccion11-juego-del-ahorcado  **********  */
+/*  **********  /74-juego-del-ahorcado/css/styles.css  **********************************  */
+/*  *************************************************************************************  */
+
+
+/*  *****  Estilos Generales  *****  */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(to bottom, #aaa, #eee, #aaa);
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 10px solid #333333;
+}
+
+.main {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* align-items: center; */
+    gap: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+button {
+    width: 40px;
+    height: 40px;
+    /* padding: 7px 14px 7px 14px; */
+    color: #ffffff;
+    background-color: blueviolet;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+button:hover,
+#volver:hover {
+    background-color: rgb(67, 22, 109);
+}
+
+
+/*  *****  Estilos del Proyecto  *****  */
+
+h2 {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.juego-ahorcado-container {
+    width: 650px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 50px;
+    padding-bottom: 50px;
+    margin-top: 50px;
+    background: linear-gradient(to bottom, #aaa, #eee, #aaa);
+}
+
+input {
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    font-family: "Courier new", monospace;
+    background-color: #ccc;
+}
+
+/* div {
+    padding-bottom: 1em;
+} */
+
+#volver {
+    display: none;
+    width: 120px;
+    height: 40px;
+    padding: 7px 14px 7px 14px; 
+    color: #ffffff;
+    background-color: blueviolet;
+    font-size: 12px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+
+
+#progreso {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    background-color: #ddd;
+}
+
+#barra {
+    position: absolute;
+    width: 1%;
+    height: 60px;
+    background-color: #4CAF50;
+}
