@@ -1,0 +1,82 @@
+<!--  ************************************************************************************  -->
+<!--  **********  /02-domina-el-dom-con-javascript/seccion10-ejemplos-usos-dom  **********  -->
+<!--  **********  /72-juego-de-memoria/index.html  ***************************************  -->
+<!--  ************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Juego de Memoria - Sección 10 - Ejemplos del Uso del DOM - Domina el DOM con JavaScript -
+        Udemy - Francisco Javier Arce Anguiano </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="img/favicon-JS-2.ico">
+
+    <!--  **********  Estilos  **********  -->
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Juego de Memoria - Sección 10 - Ejemplos del Uso del DOM. </h1>
+        <hr>
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+        <section class="juego-memoria-container">
+
+            <div id="juego">
+                <table>
+                    <tr>
+                        <td id="0" class="letra" data-valor="void">?</td>
+                        <td id="1" class="letra" data-valor="void">?</td>
+                        <td id="2" class="letra" data-valor="void">?</td>
+                        <td id="3" class="letra" data-valor="void">?</td>
+                    </tr>
+                    <tr>
+                        <td id="4" class="letra" data-valor="void">?</td>
+                        <td id="5" class="letra" data-valor="void">?</td>
+                        <td id="6" class="letra" data-valor="void">?</td>
+                        <td id="7" class="letra" data-valor="void">?</td>
+                    </tr>
+                    <tr>
+                        <td id="8" class="letra" data-valor="void">?</td>
+                        <td id="9" class="letra" data-valor="void">?</td>
+                        <td id="10" class="letra" data-valor="void">?</td>
+                        <td id="11" class="letra" data-valor="void">?</td>
+                    </tr>
+                    <tr>
+                        <td id="12" class="letra" data-valor="void">?</td>
+                        <td id="13" class="letra" data-valor="void">?</td>
+                        <td id="14" class="letra" data-valor="void">?</td>
+                        <td id="15" class="letra" data-valor="void">?</td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="centrar">
+                <button id="iniciar"> Iniciar </button>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!--  **********  Código JS  **********  -->
+    <script src="js/juego-memoria.js"> </script>
+
+</body>
+
+</html>

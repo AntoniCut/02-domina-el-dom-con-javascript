@@ -1,0 +1,106 @@
+/*  ************************************************************************************  */
+/*  **********  /02-domina-el-dom-con-javascript/seccion10-ejemplos-usos-dom  **********  */
+/*  **********  /72-juego-de-memoria//css/styles.css  **********************************  */
+/*  ************************************************************************************   */
+
+
+/*  *****  Estilos Generales  *****  */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(to bottom, #aaa, #eee, #aaa);
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 10px solid #333333;
+}
+
+.main {
+    width: 100%;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    gap: 50px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 20px 10px 20px;
+    color: #ffffff;
+    background-color: blueviolet;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+button:hover {
+    background-color: rgb(67, 22, 109);
+}
+
+
+/*  *****  Estilos del Proyecto  *****  */
+
+label {
+    font-size: 48px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: -15px;
+}
+
+.juego-memoria-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 50px;
+    padding-bottom: 30px;
+    margin-top: 50px;
+    background: linear-gradient(to bottom, #aaa, #eee, #aaa);
+}
+
+#juego{
+	opacity: 0.3;
+	width: 400px;
+	height: 400px;
+	margin:0 auto;
+}
+
+table{
+	width: 100%;
+	height: 100%;
+}
+
+td{
+	width: 25%;
+	height: 25%;
+	background-color: black;
+	border: 3px solid black;
+	border-radius: 5px;
+}
+
+.letra{
+	color:white;
+	font-size: 40px;
+	text-align: center;
+	font-style: italic;
+}
+
+.centrar{
+	text-align: center;
+}
