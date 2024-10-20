@@ -1,0 +1,101 @@
+<!--  ************************************************************************************  -->
+<!--  **********  /02-domina-el-dom-con-javascript/seccion10-ejemplos-usos-dom  **********  -->
+<!--  **********  /73-añadir-filas-a-tabla-dinamicamente/index.html  *********************  -->
+<!--  ************************************************************************************  -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Añadir Filas a una Tabla Dinamicamente - Sección 10 - Ejemplos del Uso del DOM - Domina el DOM con
+        JavaScript -
+        Udemy - Francisco Javier Arce Anguiano </title>
+
+    <!--  **********  Favicon  **********  -->
+    <link rel="icon" href="img/favicon-JS-2.ico">
+
+    <!--  **********  Estilos  **********  -->
+    <link rel="stylesheet" href="css/styles.css">
+
+</head>
+
+
+<body>
+
+    <!--  **********  Header o Cabecera  **********  -->
+    <header class="header">
+
+        <h1> Añadir Filas a una Tabla Dinamicamente - Sección 10 - Ejemplos del Uso del DOM. </h1>
+        <hr>
+    </header>
+
+    <!--  **********  Contenido  **********  -->
+    <main class="main">
+
+        <!-- ----------  Añadir registros a una tabla Dinamicamente  ---------- -->
+        <section class="tabla-container">
+
+            <h2> Añadir Registros Dinamicamente </h2>
+
+            <table id="alumnos" border="1">
+                <tr>
+                    <th> ID </th>
+                    <th> Nombre </th>
+                    <th> Calificación </th>
+                </tr>
+            </table>
+
+        </section>
+
+
+        <!-- ----------  Añadir registros a una tabla Dinamicamente mediante un formulario ---------- -->
+        <section class="tabla-container">
+
+            <h2> Añadir Registros Dinamicamente <br> Mediante un Formulario </h2>
+
+            <div>
+                <label for="id" class="campos"> ID </label>
+                <input type="text" id="id" name="id">
+            </div>
+
+            <div>
+                <label for="producto" class="campos"> Producto </label>
+                <input type="text" id="producto" name="producto">
+            </div>
+
+            <div>
+                <label for="cantidad" class="campos"> Cantidad </label>
+                <input type="text" id="cantidad" name="cantidad">
+            </div>
+
+            <div>
+                <label for="precio" class="campos"> Precio </label>
+                <input type="text" id="precio" name="precio">
+            </div>
+
+            <button id="annadir"> Añadir </button>
+
+            <table id="salida" border="1">
+                <tr>
+                    <th> ID </th>
+                    <th> Producto </th>
+                    <th> Cantidad </th>
+                    <th> Precio </th>
+                    <th> Total </th>
+                </tr>
+            </table>
+
+        </section>
+
+    </main>
+
+
+    <!--  **********  Código JS  **********  -->
+    <script src="js/añadir-filas-tabla-dinamica.js"> </script>
+
+</body>
+
+</html>
