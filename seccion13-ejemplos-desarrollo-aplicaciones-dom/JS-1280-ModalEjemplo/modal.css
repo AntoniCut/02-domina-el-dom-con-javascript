@@ -1,0 +1,84 @@
+#miImg{
+	border-radius: 5px;
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+#miImg:hover {opacity: 0.7;}
+
+.modal{
+	display: none;
+	position: fixed;
+	z-index: 1;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-contenido {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    height: 150px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    font-size: 40px;
+    font-weight: bold;
+    z-index: 10;
+    color: #f1f1f1;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+.close:hover, .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/*  *****  animation  *****  */
+
+.modal-contenido,
+#caption {
+    animation-name: crece;
+    animation-duration: 1s;
+}
+
+@keyframes crece {
+    from{
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+
+/*  *****  responsive  *****  */
+@media only screen and (max-width: 700px) {
+    
+    .modal-contenido {
+        width: 100%;
+    }
+}
+
