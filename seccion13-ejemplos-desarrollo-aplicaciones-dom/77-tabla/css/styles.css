@@ -1,6 +1,6 @@
 /*  ********************************************************************************************************  */
 /*  **********  /02-domina-el-dom-con-javascript/seccion13-ejemplos-desarrollo-aplicaciones-dom/  **********  */
-/*  **********  /76-ventana-modal/css/styles.css  **********************************************************  */
+/*  **********  /77-filtrar-tabla/css/styles.css  **********************************************************  */
 /*  ********************************************************************************************************  */
 
 
@@ -49,102 +49,42 @@ h2 {
     text-align: center;
 }
 
-.ventana-modal-container {
-    padding: 50px;
+.filtrar-tabla-container {
+    width: 80%;
+    padding: 20px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     gap: 50px;
     background: linear-gradient(to bottom, #aaa, #eee, #aaa);
-    /* background-color: aqua; */
-    /* align-items: center; */
 }
 
 
-#miImg {
-    border-radius: 5px;
-    cursor: pointer;
-    transition: all 300ms ease-in-out;
+#entrada{
+	background-position: 10px 10px;
+	background-repeat: no-repeat;
+	width: 100%;
+	font-size: 16px;
+	padding: 12px 20px 12px 40px;
+	border: 1px solid black;
 }
 
-#miImg:hover {
-    opacity: 0.7;
+#misLibros{
+	border-collapse: collapse;
+	width: 100%;
+	border: 1px solid #ddd;
+	font-size: 20px;
 }
 
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    padding-top: 100px;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.9);
+#misLibros th, #misLibros td{
+	text-align: left;
+	padding: 12px;
 }
 
-.modal-contenido {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
+#misLibros tr{
+	border-bottom: 1px solid #ddd;
 }
 
-#caption {
-    margin: auto;
-    display: block;
-    width: 80%;
-    max-width: 700px;
-    height: 150px;
-    font-size: 24px;
-    text-align: center;
-    color: #ccc;
-    padding: 10px 0;
-}
-
-.close {
-    position: absolute;
-    top: 15px;
-    right: 35px;
-    font-size: 40px;
-    font-weight: bold;
-    z-index: 10;
-    color: #f1f1f1;
-    cursor: pointer;
-    transition: all 300ms ease-in-out;
-}
-
-.close:hover, 
-.close:focus {
-    color: #bbb;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-
-/*  *****  animation  *****  */
-
-.modal-contenido,
-#caption {
-    animation-name: crece;
-    animation-duration: 1s;
-}
-
-@keyframes crece {
-    from{
-        transform: scale(0);
-    }
-    to {
-        transform: scale(1);
-    }
-}
-
-
-/*  *****  responsive  *****  */
-@media only screen and (max-width: 700px) {
-    
-    .modal-contenido {
-        width: 97%;
-    }
+#misLibros tr.encabezado, #misLibros tr:hover{
+	background-color: lightgoldenrodyellow;
 }
