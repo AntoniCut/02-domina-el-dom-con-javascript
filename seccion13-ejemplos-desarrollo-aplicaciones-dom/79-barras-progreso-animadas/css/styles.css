@@ -1,0 +1,115 @@
+/*  ********************************************************************************************************  */
+/*  **********  /02-domina-el-dom-con-javascript/seccion13-ejemplos-desarrollo-aplicaciones-dom/  **********  */
+/*  **********  /79-barras-progreso-animadas/css/styles.css  ***********************************************  */
+/*  ********************************************************************************************************  */
+
+
+/*  *****  Estilos Generales  *****  */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: linear-gradient(to bottom, #aaa, #eee, #aaa);
+    font-family: Arial, sans-serif;
+}
+
+.header {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: 10px solid #333333;
+}
+
+.main {
+    width: 100%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    width: 300px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: blueviolet;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: all 300ms ease-in-out;
+}
+
+button:hover {
+    background-color: rgb(60, 7, 109);
+}
+
+/*  *****  Estilos del Proyecto  *****  */
+
+h2 {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.barra-progreso-container {
+    width: 80%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background: linear-gradient(to bottom, #aaa, #eee, #aaa);
+}
+
+.contenedor{
+    width:100%;
+    /* background-color: lightgray; */
+    background-color: #ffffff;
+  }
+
+  .barra{
+    text-align: right;
+    padding: 10px 10px 10px 0;
+    color: white;
+    font-weight: bold;
+  }
+  
+  
+.barra-progreso-container p:nth-of-type(1) {
+    font-size: 24px;
+    font-weight: bold;
+    color: #D2691E;
+}
+
+.barra-progreso-container p:nth-of-type(2) {
+    font-size: 24px;
+    font-weight: bold;
+    color: #8B8000;
+}
+
+.barra-progreso-container p:nth-of-type(3) {
+    font-size: 24px;
+    font-weight: bold;
+    color: #E06666;
+}
+
+.barra-progreso-container p:nth-of-type(4) {
+    font-size: 24px;
+    font-weight: bold;
+    color: #57c428;
+}

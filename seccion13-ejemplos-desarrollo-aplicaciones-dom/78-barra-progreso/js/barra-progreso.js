@@ -22,9 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
             iniciado = true;
             
             let incrementoBarra = 1;
-            const intervalo = setInterval(avanza, 50);
-
-            function avanza() {
+            
+            const avanza = () => {
                 
                 if (incrementoBarra >= 100) {
                     
@@ -37,6 +36,8 @@ document.addEventListener("DOMContentLoaded", () => {
                     barra.innerText = `${incrementoBarra}%`;
                 }
             }
+
+            const intervalo = setInterval(avanza, 50);
         }
     })
 });
